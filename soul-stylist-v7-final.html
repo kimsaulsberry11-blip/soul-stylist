@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soul Stylist — Your Home, Your Culture, Your Way</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --oatmeal: #F5EFE6;
+  --terracotta: #C4622D;
+  --terra-soft: rgba(196,98,45,0.12);
+  --gold: #C9A84C;
+  --gold-soft: rgba(201,168,76,0.10);
+  --gold-border: rgba(201,168,76,0.25);
+  --green-deep: #1B3A2D;
+  --green-mid: #243D2F;
+  --ink: #111A13;
+  --ink-soft: #1A2A1E;
+  --muted: #7A8F7D;
+  --cream-text: #F0E8DC;
+  --red-pan: #C41E1E;
+  --black-pan: #0A0A0A;
+  --green-pan: #1B5E20;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--ink);
+  color: var(--cream-text);
+  min-height: 100vh;
+}
+
+/* ── PAN-AFRICAN STRIPE ── */
+.pan-stripe {
+  height: 4px;
+  background: linear-gradient(90deg, var(--red-pan) 33.3%, var(--black-pan) 33.3%, var(--black-pan) 66.6%, var(--green-pan) 66.6%);
+}
+
+/* ── LOGO NAV BAR ── */
+.logo-bar {
+  background: var(--ink);
+  padding: 16px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  border: 1px solid var(--gold-border); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; position: relative; overflow: hidden;
+}
+.logo-icon::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--red-pan) 33.3%, #000 33.3%, #000 66.6%, var(--green-pan) 66.6%);
+}
+.logo-icon-inner { font-size: 22px; line-height: 1; }
+.logo-text-block { line-height: 1.1; }
+.logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 500; color: #fff; letter-spacing: 0.5px; display: block;
+}
+.logo-tagline {
+  font-size: 8px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); display: block; margin-top: 2px;
+}
+.logo-bar-powered {
+  font-size: 10px; font-weight: 500; letter-spacing: 1px;
+  color: var(--muted); display: flex; align-items: center; gap: 6px;
+}
+.logo-bar-powered .powered-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.logo-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  border: 1px solid var(--gold-border); border-radius: 50%;
+  flex-shrink: 0;
+}
+.hero-logo-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--gold-border); border-radius: 50%;
+}
+
+.logo-img {
+  width: 52px; height: 52px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+.hero-logo-img {
+  width: 160px; height: 160px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+}
+.hero-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* ── AI VISUALIZATION SECTION ── */
+.viz-section {
+  background: linear-gradient(135deg, rgba(27,58,45,0.6) 0%, rgba(17,26,19,0.8) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: 16px; padding: 32px 28px; margin-bottom: 32px;
+}
+.viz-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 400; color: #fff; margin-bottom: 6px;
+}
+.viz-section .viz-sub {
+  font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px;
+}
+.viz-tools {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.vtool {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 500;
+  color: var(--cream-text);
+}
+.viz-prompt-box {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 18px 20px; margin-bottom: 16px;
+  font-size: 13px; color: var(--cream-text); line-height: 1.8;
+  font-style: italic; user-select: all;
+  min-height: 80px;
+}
+.viz-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.copy-success {
+  font-size: 12px; color: #7EB9A0; font-weight: 600;
+  opacity: 0; transition: opacity 0.3s;
+}
+.copy-success.show { opacity: 1; }
+.viz-tip {
+  margin-top: 16px; background: rgba(201,168,76,0.08);
+  border: 1px solid var(--gold-border); border-radius: 8px;
+  padding: 12px 16px; font-size: 11px; color: var(--muted); line-height: 1.7;
+}
+.viz-tip strong { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--green-deep) 0%, var(--ink) 70%);
+  padding: 52px 24px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gold-border);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% -20%, rgba(201,168,76,0.15) 0%, transparent 65%);
+}
+.eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px; position: relative;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 6vw, 58px); font-weight: 300;
+  color: #fff; line-height: 1.05; margin-bottom: 12px; position: relative;
+}
+.hero h1 em { font-style: italic; color: #E8D090; }
+.hero .sub {
+  color: var(--muted); font-size: 14px; font-weight: 300;
+  max-width: 480px; margin: 0 auto 24px; line-height: 1.8; position: relative;
+}
+.badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; position: relative; }
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  border-radius: 20px; padding: 5px 12px; font-size: 11px; color: var(--gold); letter-spacing: 0.3px;
+}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+/* ── MAIN CONTAINER ── */
+.container { max-width: 820px; margin: 0 auto; padding: 40px 20px 60px; }
+
+/* ── STEPS ── */
+.step { display: none; animation: fadeUp 0.4s ease; }
+.step.active { display: block; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+.step-header { text-align: center; margin-bottom: 32px; }
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--gold-border); background: var(--gold-soft);
+  color: var(--gold); font-size: 13px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.step-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 400; color: #fff; margin-bottom: 8px;
+}
+.step-header p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+/* ── FORM ELEMENTS ── */
+.form-row { margin-bottom: 20px; }
+label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+input[type="text"], textarea, select {
+  width: 100% !important; background: rgba(255,255,255,0.04) !important; border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 8px !important; padding: 13px 16px !important; font-family: 'DM Sans', sans-serif !important; font-size: 14px !important;
+  transition: border-color 0.2s !important;
+  color: #F0E8DC !important;
+  -webkit-text-fill-color: #F0E8DC !important;
+  opacity: 1 !important;
+}
+input[type="text"]:focus, textarea:focus, select:focus {
+  outline: none !important; border-color: rgba(201,168,76,0.5) !important;
+  color: #F0E8DC !important;
+  -webkit-text-fill-color: #F0E8DC !important;
+}
+input[type="text"]::placeholder, textarea::placeholder {
+  color: rgba(122,143,125,0.8) !important;
+  -webkit-text-fill-color: rgba(122,143,125,0.8) !important;
+  opacity: 1 !important;
+}
+textarea {
+  resize: vertical !important; min-height: 80px !important;
+  color: #F0E8DC !important;
+  -webkit-text-fill-color: #F0E8DC !important;
+}
+select option { background: #1B3A2D; color: #F0E8DC; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:520px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* ── PHOTO UPLOAD ── */
+.upload-zone {
+  border: 2px dashed rgba(201,168,76,0.3); border-radius: 12px;
+  padding: 40px 20px; text-align: center; cursor: pointer;
+  transition: all 0.3s; background: rgba(201,168,76,0.03);
+  position: relative;
+}
+.upload-zone:hover, .upload-zone.drag { border-color: var(--gold); background: var(--gold-soft); }
+.upload-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.upload-icon { font-size: 36px; margin-bottom: 12px; }
+.upload-zone h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 6px; }
+.upload-zone p { color: var(--muted); font-size: 12px; }
+#preview-wrap { margin-top: 16px; display: none; }
+#preview-wrap img { width: 100%; max-height: 260px; object-fit: cover; border-radius: 10px; border: 1px solid var(--gold-border); }
+
+/* ── AESTHETIC CARDS ── */
+.aesthetic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.acard {
+  border: 1px solid rgba(255,255,255,0.10); border-radius: 10px;
+  padding: 18px 14px; cursor: pointer; text-align: center; transition: all 0.25s;
+  background: rgba(255,255,255,0.02);
+}
+.acard:hover { border-color: var(--gold-border); background: var(--gold-soft); }
+.acard.selected { border-color: var(--gold); background: var(--gold-soft); }
+.acard .icon { font-size: 28px; margin-bottom: 8px; }
+.acard .name { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.acard .desc { font-size: 10px; color: var(--muted); line-height: 1.5; }
+
+/* ── BUDGET OPTIONS ── */
+.budget-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.boption {
+  border: 1px solid rgba(255,255,255,0.10); border-radius: 10px;
+  padding: 16px 12px; cursor: pointer; text-align: center; transition: all 0.25s;
+}
+.boption:hover { border-color: var(--gold-border); }
+.boption.selected { border-color: var(--gold); background: var(--gold-soft); }
+.boption .blabel { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.boption .brange { font-size: 13px; color: #fff; font-weight: 500; }
+.boption .bdesc { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: block; width: 100%;
+  background: linear-gradient(135deg, var(--terracotta) 0%, #A84E22 100%);
+  color: #fff; border: none; border-radius: 10px;
+  padding: 16px 24px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  cursor: pointer; transition: all 0.2s; margin-top: 24px;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(196,98,45,0.35); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--gold) 0%, #A88030 100%);
+  color: #111; border: none; border-radius: 8px;
+  padding: 12px 20px; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--gold); border: 1px solid var(--gold-border); border-radius: 8px;
+  padding: 12px 20px; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--gold-soft); }
+
+/* ── LOADING ── */
+.loading-wrap { text-align: center; padding: 60px 20px; }
+.pulse-ring {
+  width: 70px; height: 70px; border-radius: 50%;
+  border: 2px solid var(--gold-border);
+  border-top-color: var(--gold);
+  animation: spin 1.2s linear infinite;
+  margin: 0 auto 24px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-wrap h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: #fff; margin-bottom: 8px; }
+.loading-wrap p { color: var(--muted); font-size: 13px; }
+.loading-steps { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.lstep { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; justify-content: center; }
+.lstep.done { color: var(--gold); }
+.lstep::before { content: '○'; }
+.lstep.done::before { content: '✦'; }
+
+/* ── RESULTS ── */
+.results-header { text-align: center; margin-bottom: 36px; }
+.results-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: #fff; margin-bottom: 8px; }
+.results-header .analysis { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 600px; margin: 0 auto; }
+
+/* ── ROOM ANALYSIS CARD ── */
+.analysis-card {
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--ink-soft) 100%);
+  border: 1px solid var(--gold-border); border-radius: 14px;
+  padding: 24px 28px; margin-bottom: 32px;
+}
+.analysis-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--gold); margin-bottom: 12px; }
+.analysis-card p { font-size: 13px; color: var(--cream-text); line-height: 1.8; }
+.palette-dots { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.pdot { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+.pdot-circle { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); flex-shrink: 0; }
+
+/* ── SECTION LABEL ── */
+.section-label {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+}
+.section-label::before, .section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--gold-border);
+}
+.section-label span {
+  font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); white-space: nowrap;
+}
+
+/* ── PRODUCT CARDS ── */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 36px; }
+.pcard {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; overflow: hidden; transition: all 0.25s;
+  display: flex; flex-direction: column;
+}
+.pcard:hover { border-color: var(--gold-border); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+.pcard-img {
+  width: 100%; height: 160px; object-fit: cover;
+  background: linear-gradient(135deg, var(--green-mid), var(--ink-soft));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px;
+}
+.pcard-img img { width: 100%; height: 100%; object-fit: cover; }
+.pcard-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+.pcard-tier { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.tier-curated { color: var(--gold); }
+.tier-recommended { color: #7EB9A0; }
+.tier-budget { color: #9BA8B0; }
+.pcard-name { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 4px; line-height: 1.3; }
+.pcard-brand { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.pcard-why { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; flex: 1; }
+.pcard-footer { display: flex; align-items: center; justify-content: space-between; }
+.pcard-price { font-size: 14px; font-weight: 600; color: var(--gold); }
+.pcard-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--gold-soft); border: 1px solid var(--gold-border);
+  color: var(--gold); text-decoration: none; border-radius: 6px;
+  padding: 6px 12px; font-size: 11px; font-weight: 600; transition: all 0.2s;
+}
+.pcard-link:hover { background: var(--gold); color: #111; }
+
+/* ── VIZ TABS ── */
+.viz-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.viz-tab {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 9px 18px; font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 600; color: var(--muted); cursor: pointer; transition: all 0.2s;
+}
+.viz-tab:hover { border-color: var(--gold-border); color: var(--cream-text); }
+.viz-tab.active { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
+.viz-panel-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+
+/* ── PLATFORM GUIDE CARDS ── */
+.platform-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 14px; }
+.platform-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 18px;
+}
+.platform-header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.platform-icon { font-size: 24px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.platform-name { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.platform-tier { font-size: 10px; color: var(--gold); font-weight: 500; }
+.platform-steps { padding-left: 16px; }
+.platform-steps li { font-size: 11px; color: var(--muted); line-height: 1.7; margin-bottom: 4px; }
+.platform-steps li strong { color: var(--cream-text); }
+
+/* ── SW FEATURED ── */
+.sw-feature {
+  background: linear-gradient(135deg, rgba(196,98,45,0.15) 0%, rgba(27,58,45,0.3) 100%);
+  border: 1px solid rgba(196,98,45,0.3); border-radius: 14px;
+  padding: 28px; margin-bottom: 32px;
+  display: flex; gap: 20px; align-items: center;
+}
+@media(max-width:560px) { .sw-feature { flex-direction: column; } }
+.sw-feature-badge {
+  background: var(--terracotta); color: #fff; font-size: 9px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; border-radius: 4px;
+  padding: 4px 10px; margin-bottom: 8px; display: inline-block;
+}
+.sw-feature-img {
+  width: 100px; height: 100px; border-radius: 10px; object-fit: cover; flex-shrink: 0;
+  background: var(--green-deep); display: flex; align-items: center; justify-content: center; font-size: 40px;
+}
+.sw-feature-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: #fff; margin-bottom: 6px; }
+.sw-feature-body p { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.sw-feature-body a {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--terracotta); color: #fff; text-decoration: none;
+  border-radius: 8px; padding: 10px 18px; font-size: 12px; font-weight: 600; transition: all 0.2s;
+}
+.sw-feature-body a:hover { background: #A84E22; }
+
+/* ── STYLING TIPS ── */
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 32px; }
+.tip-card {
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 18px;
+}
+.tip-card .tip-num { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+.tip-card p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+/* ── MOOD BOARD ── */
+#moodboard-wrap { display: none; }
+.mb-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 28px; }
+#moodboard {
+  background: var(--oatmeal); color: #2A2A2A;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── RESTART BTN ── */
+.restart-wrap { text-align: center; margin-top: 40px; }
+.btn-restart {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted); border-radius: 8px; padding: 10px 20px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; cursor: pointer; transition: all 0.2s;
+}
+.btn-restart:hover { border-color: var(--gold-border); color: var(--gold); }
+
+/* ── PAYWALL MODAL ── */
+.paywall-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.paywall-overlay.open { display: flex; animation: fadeUp 0.3s ease; }
+.paywall-box {
+  background: linear-gradient(135deg, #1B3A2D, #111A13);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 20px;
+  max-width: 440px; width: 100%;
+  padding: 44px 32px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.paywall-stripe {
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #C41E1E 33.3%, #0A0A08 33.3%, #0A0A08 66.6%, #1B5E20 66.6%);
+}
+.paywall-icon { font-size: 38px; margin-bottom: 16px; }
+.paywall-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px; font-weight: 400; color: #fff; margin-bottom: 10px;
+}
+.paywall-box p {
+  font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 24px;
+}
+.paywall-features {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 12px; padding: 18px; margin-bottom: 24px;
+  text-align: left;
+}
+.paywall-features-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 12px; text-align: center;
+}
+.paywall-feature-item {
+  font-size: 13px; color: var(--cream-text); line-height: 2;
+  display: flex; align-items: center; gap: 10px;
+}
+.paywall-feature-item::before { content: '✦'; color: var(--gold); font-size: 10px; flex-shrink: 0; }
+.paywall-subscribe {
+  display: block; width: 100%;
+  background: linear-gradient(135deg, var(--terracotta) 0%, #A84E22 100%);
+  color: #fff; text-decoration: none;
+  border-radius: 10px; padding: 16px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  margin-bottom: 12px; transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.paywall-subscribe:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(196,98,45,0.4); }
+.paywall-later {
+  display: block; width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--muted); border-radius: 8px;
+  padding: 11px 20px; font-family: 'DM Sans', sans-serif;
+  font-size: 12px; cursor: pointer; transition: all 0.2s;
+}
+.paywall-later:hover { border-color: rgba(255,255,255,0.3); color: var(--cream-text); }
+.paywall-guarantee {
+  margin-top: 14px; font-size: 10px; color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  body { background: white !important; }
+  .hero, .container > *:not(#step-results) { display: none !important; }
+  #moodboard { box-shadow: none !important; border: none !important; }
+  .mb-actions, .restart-wrap { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Logo Navigation Bar -->
+<div class="logo-bar">
+  <a class="logo-mark" href="https://soulwovenblankets.online" target="_blank">
+    <div class="logo-img logo-placeholder" id="logo-nav"><span style="font-size:22px;">🧶</span></div>
+    <div class="logo-text-block">
+      <span class="logo-name">Soul Woven Blankets</span>
+      <span class="logo-tagline">Keeping It Cozy For The Culture</span>
+    </div>
+  </a>
+  <div class="logo-bar-powered">
+    <div class="powered-dot"></div>
+    Soul Stylist AI
+  </div>
+</div>
+
+<div class="pan-stripe"></div>
+
+<div class="hero">
+  <div class="hero-logo">
+    <div class="hero-logo-img hero-logo-placeholder" id="logo-hero"><span style="font-size:48px;">🧶</span></div>
+  </div>
+  <h1>Soul Stylist<br><em>Your Home, Your Culture, Your Way</em></h1>
+  <p class="sub">Upload a photo of your space and receive a personalized styling plan with curated products — including Black-owned artisans — and a downloadable mood board.</p>
+  <div class="badges">
+    <span class="badge"><span class="badge-dot"></span>AI Vision Room Analysis</span>
+    <span class="badge"><span class="badge-dot"></span>Black-Owned Artisans First</span>
+    <span class="badge"><span class="badge-dot"></span>AI Room Visualization</span>
+    <span class="badge"><span class="badge-dot"></span>Downloadable Mood Board</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STEP 1: Upload -->
+  <div class="step active" id="step-1">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <h2>Show Us Your Space</h2>
+      <p>Upload a photo of the room you'd like to style. Our AI will read the colors, layout, and energy.</p>
+    </div>
+    <div class="upload-zone" id="drop-zone" onclick="triggerFileInput()">
+      <div class="upload-icon">📷</div>
+      <h3>Drop your photo here</h3>
+      <p>or click to browse — JPG, PNG, HEIC up to 10MB</p>
+      <button type="button" class="btn-gold" style="margin-top:16px;pointer-events:none;" tabindex="-1">
+        Choose Photo
+      </button>
+    </div>
+    <div id="preview-wrap">
+      <img id="preview-img" src="" alt="Your room" width="800" height="600">
+    </div>
+    <button class="btn-primary" id="btn-step1" disabled onclick="goStep(2)">
+      This is my space — let's style it ✦
+    </button>
+  </div>
+
+  <!-- STEP 2: About You -->
+  <div class="step" id="step-2">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <h2>Tell Us About Your Vision</h2>
+      <p>A few details help us match products to your specific space and taste.</p>
+    </div>
+
+    <div class="form-row">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label>Your First Name</label>
+          <input type="text" id="f-name" placeholder="What should we call you?" style="color:#F0E8DC!important;-webkit-text-fill-color:#F0E8DC!important;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;transition:border-color 0.2s;">
+        </div>
+        <div>
+          <label>Your Email</label>
+          <input type="email" id="f-email" placeholder="your@email.com" style="color:#F0E8DC!important;-webkit-text-fill-color:#F0E8DC!important;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;transition:border-color 0.2s;">
+          <div style="font-size:10px;color:#7A8F7D;margin-top:5px;">For your styling results & offers 🔒</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Your Aesthetic Vibe</label>
+      <div class="aesthetic-grid" id="aesthetic-grid">
+        <div class="acard" onclick="selectAesthetic(this,'Cozy Culture Classic')">
+          <div class="icon">🛋️</div><div class="name">Cozy Culture Classic</div>
+          <div class="desc">Warm, layered, wrapped in heritage</div>
+        </div>
+        <div class="acard" onclick="selectAesthetic(this,'Bold Pan-African Maximalist')">
+          <div class="icon">🌍</div><div class="name">Bold Maximalist</div>
+          <div class="desc">Pattern-rich, colorful, unapologetically African</div>
+        </div>
+        <div class="acard" onclick="selectAesthetic(this,'Modern Soul Minimalist')">
+          <div class="icon">◻️</div><div class="name">Modern Soul Minimalist</div>
+          <div class="desc">Clean lines, warm neutrals, intentional pieces</div>
+        </div>
+        <div class="acard" onclick="selectAesthetic(this,'Earthy Boho Heritage')">
+          <div class="icon">🌿</div><div class="name">Earthy Boho Heritage</div>
+          <div class="desc">Natural fibers, terracotta, organic textures</div>
+        </div>
+        <div class="acard" onclick="selectAesthetic(this,'Luxe Black Home')">
+          <div class="icon">✨</div><div class="name">Luxe Black Home</div>
+          <div class="desc">Elevated, sophisticated, statement pieces</div>
+        </div>
+        <div class="acard" onclick="selectAesthetic(this,'Southern Cozy Soul')">
+          <div class="icon">🏡</div><div class="name">Southern Cozy Soul</div>
+          <div class="desc">Comfort-first, soulful, rooted in community</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Your Budget Range</label>
+      <div class="budget-options">
+        <div class="boption" onclick="selectBudget(this,'budget','Under $300')">
+          <div class="blabel">Intentional</div>
+          <div class="brange">Under $300</div>
+          <div class="bdesc">Beautiful on any budget</div>
+        </div>
+        <div class="boption" onclick="selectBudget(this,'mid','$300 – $800')">
+          <div class="blabel">Curated</div>
+          <div class="brange">$300 – $800</div>
+          <div class="bdesc">Mix of artisan + retail</div>
+        </div>
+        <div class="boption" onclick="selectBudget(this,'luxury','$800+')">
+          <div class="blabel">Investment</div>
+          <div class="brange">$800+</div>
+          <div class="bdesc">Heirloom-quality pieces</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-row">
+        <label>Sofa / Seating Color</label>
+        <input type="text" id="f-sofa" placeholder="e.g. cream, charcoal, camel" style="color:#F0E8DC!important;-webkit-text-fill-color:#F0E8DC!important;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;transition:border-color 0.2s;">
+      </div>
+      <div class="form-row">
+        <label>Wall Color</label>
+        <input type="text" id="f-wall" placeholder="e.g. white, sage, warm gray" style="color:#F0E8DC!important;-webkit-text-fill-color:#F0E8DC!important;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;transition:border-color 0.2s;">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Anything else we should know?</label>
+      <textarea id="f-notes" placeholder="Kids or pets? A piece you love and want to keep? A vibe word that describes your dream space?" style="color:#F0E8DC!important;-webkit-text-fill-color:#F0E8DC!important;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:14px;width:100%;resize:vertical;min-height:80px;"></textarea>
+    </div>
+
+    <button class="btn-primary" onclick="runStylist()">
+      ✦ Create My Cozy Culture Look
+    </button>
+  </div>
+
+  <!-- STEP 3: Loading -->
+  <div class="step" id="step-loading">
+    <div class="loading-wrap">
+      <div class="pulse-ring"></div>
+      <h3>Reading your space…</h3>
+      <p>Our AI is analyzing your room and curating products just for you.</p>
+      <div class="loading-steps">
+        <div class="lstep" id="ls1">Analyzing your room's colors and energy</div>
+        <div class="lstep" id="ls2">Matching your aesthetic profile</div>
+        <div class="lstep" id="ls3">Curating Black-owned artisan picks</div>
+        <div class="lstep" id="ls4">Selecting complementary retail finds</div>
+        <div class="lstep" id="ls5">Writing your AI visualization prompt</div>
+        <div class="lstep" id="ls6">Building your mood board</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: Results -->
+  <div class="step" id="step-results">
+
+    <div class="results-header">
+      <h2>Your Cozy Culture Look</h2>
+      <p class="analysis" id="result-analysis"></p>
+    </div>
+
+    <div class="analysis-card" id="analysis-card">
+      <h3>✦ What We See In Your Space</h3>
+      <p id="room-read"></p>
+      <div class="palette-dots" id="palette-dots"></div>
+    </div>
+
+    <div id="sw-feature-block"></div>
+
+    <div class="section-label"><span>✦ Black-Owned Artisans</span></div>
+    <div class="product-grid" id="grid-curated"></div>
+
+    <div class="section-label"><span>Specialty Picks</span></div>
+    <div class="product-grid" id="grid-specialty"></div>
+
+    <div class="section-label"><span>Accessible Finds</span></div>
+    <div class="product-grid" id="grid-retail"></div>
+
+    <div class="section-label"><span>Styling Notes For Your Space</span></div>
+    <div class="tips-grid" id="tips-grid"></div>
+
+    <!-- AI Room Visualization — Prompt + Platform Guide only -->
+    <div class="viz-section" id="viz-section" style="display:none;">
+      <h3>✦ See Your Room Transformed</h3>
+      <p class="viz-sub">Take your custom AI prompt to any image tool and see your Cozy Culture space come to life. For best results, upload your room photo alongside the prompt in ChatGPT or Adobe Firefly.</p>
+
+      <div class="viz-tabs">
+        <button class="viz-tab active" onclick="switchVizTab(this,'prompt')" id="tab-prompt">📋 Copy Prompt</button>
+        <button class="viz-tab" onclick="switchVizTab(this,'guide')" id="tab-guide">🗺 Platform Guide</button>
+      </div>
+
+      <!-- TAB 1: Copy prompt -->
+      <div class="viz-panel active" id="panel-prompt">
+        <p class="viz-panel-desc">Copy this custom-written prompt and paste it into any AI image tool. For best results, upload your room photo alongside the prompt in ChatGPT or Adobe Firefly.</p>
+        <div class="viz-tools">
+          <span class="vtool">ChatGPT</span>
+          <span class="vtool">Midjourney</span>
+          <span class="vtool">Adobe Firefly</span>
+          <span class="vtool">DALL·E</span>
+          <span class="vtool">Canva AI</span>
+          <span class="vtool">Ideogram</span>
+        </div>
+        <div class="viz-prompt-box" id="viz-prompt-text">Generating your room visualization prompt…</div>
+        <div class="viz-actions">
+          <button class="btn-gold" id="copy-viz-btn" onclick="copyVizPrompt()">📋 Copy Prompt</button>
+          <span class="copy-success" id="copy-success">✓ Copied!</span>
+        </div>
+        <div class="viz-tip" style="margin-top:16px;">
+          <strong>Pro Tip:</strong> In ChatGPT or Adobe Firefly, upload your room photo <em>first</em>, then paste this prompt. The AI will use your actual space as the base and apply the Cozy Culture styling on top — so you see <em>your</em> room transformed, not a generic one.
+        </div>
+      </div>
+
+      <!-- TAB 2: Platform guide -->
+      <div class="viz-panel" id="panel-guide" style="display:none;">
+        <p class="viz-panel-desc" style="margin-bottom:20px;">Step-by-step instructions for every major AI image tool — pick whichever you already use.</p>
+        <div class="platform-cards">
+          <div class="platform-card">
+            <div class="platform-header">
+              <span class="platform-icon">💬</span>
+              <div>
+                <div class="platform-name">ChatGPT (Best for photo-accurate)</div>
+                <div class="platform-tier">Free & Plus — Recommended</div>
+              </div>
+            </div>
+            <ol class="platform-steps">
+              <li>Go to <strong>chatgpt.com</strong> and start a new chat</li>
+              <li>Click the 📎 paperclip and upload your room photo</li>
+              <li>Switch to the <strong>Copy Prompt</strong> tab above and copy your prompt</li>
+              <li>Paste the prompt in the chat and hit Send</li>
+              <li>ChatGPT will generate your styled room using your actual photo as reference</li>
+            </ol>
+          </div>
+          <div class="platform-card">
+            <div class="platform-header">
+              <span class="platform-icon">🔥</span>
+              <div>
+                <div class="platform-name">Adobe Firefly</div>
+                <div class="platform-tier">Free tier available — Great for interiors</div>
+              </div>
+            </div>
+            <ol class="platform-steps">
+              <li>Go to <strong>firefly.adobe.com</strong> and sign in (free Adobe account works)</li>
+              <li>Choose <strong>Generative Fill</strong> or <strong>Text to Image</strong></li>
+              <li>Upload your room photo, paste your prompt</li>
+              <li>Use <strong>Structure Reference</strong> to preserve your room's layout</li>
+              <li>Generate — produces highly realistic interior results</li>
+            </ol>
+          </div>
+          <div class="platform-card">
+            <div class="platform-header">
+              <span class="platform-icon">🎨</span>
+              <div>
+                <div class="platform-name">Canva AI (Magic Media)</div>
+                <div class="platform-tier">Free with Canva account</div>
+              </div>
+            </div>
+            <ol class="platform-steps">
+              <li>Open <strong>Canva</strong> and create a new design</li>
+              <li>Click <strong>Apps → Magic Media → Text to Image</strong></li>
+              <li>Paste your copied prompt</li>
+              <li>Set style to <strong>Photo</strong> or <strong>Cinematic</strong></li>
+              <li>Generate 4 variations and pick your favorite</li>
+            </ol>
+          </div>
+          <div class="platform-card">
+            <div class="platform-header">
+              <span class="platform-icon">⚡</span>
+              <div>
+                <div class="platform-name">Ideogram</div>
+                <div class="platform-tier">Free tier — Excellent for styled rooms</div>
+              </div>
+            </div>
+            <ol class="platform-steps">
+              <li>Go to <strong>ideogram.ai</strong> and create a free account</li>
+              <li>Paste your copied prompt in the text box</li>
+              <li>Select <strong>Realistic</strong> style</li>
+              <li>Generate — Ideogram excels at interior design imagery</li>
+              <li>Download your favorite and save it alongside your mood board</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mood Board -->
+    <div id="moodboard-wrap">
+      <div class="section-label"><span>Your Downloadable Mood Board</span></div>
+      <div class="mb-actions">
+        <button class="btn-gold" id="btn-png" onclick="downloadMoodboard('png')">⬇ Download PNG</button>
+        <button class="btn-gold" id="btn-pdf" onclick="downloadMoodboard('pdf')" style="background:linear-gradient(135deg,#1B3A2D,#0F1A12);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);">⬇ Download PDF</button>
+        <button class="btn-outline" onclick="printMoodboard()">🖨 Print</button>
+      </div>
+      <div id="moodboard" style="width:100%;border-radius:12px;overflow:hidden;"></div>
+    </div>
+
+    <!-- Style Another Room → triggers paywall -->
+    <div class="restart-wrap">
+      <button class="btn-restart" onclick="showPaywall()">↺ Style Another Room</button>
+    </div>
+
+  </div><!-- /step-results -->
+
+</div><!-- /container -->
+
+<!-- ══════════════════════════════════════════
+     PAYWALL MODAL
+══════════════════════════════════════════ -->
+<div class="paywall-overlay" id="paywall-modal">
+  <div class="paywall-box">
+    <div class="paywall-stripe"></div>
+    <div class="paywall-icon">✦</div>
+    <h2>Style Unlimited Rooms</h2>
+    <p>Your first look was on us. Subscribe to Soul Stylist for unlimited room analyses, mood boards, and Black-owned artisan picks.</p>
+    <div class="paywall-features">
+      <div class="paywall-features-label">What You Get</div>
+      <div class="paywall-feature-item">Unlimited room styling sessions</div>
+      <div class="paywall-feature-item">Downloadable mood boards every time</div>
+      <div class="paywall-feature-item">Black-owned artisan curation</div>
+      <div class="paywall-feature-item">AI visualization prompts for any room</div>
+      <div class="paywall-feature-item">Cancel anytime — no commitment</div>
+    </div>
+    <a href="https://soulwovenblankets.online/products/soul-stylist-ai-interior-styling" target="_blank" class="paywall-subscribe">
+      ✦ Subscribe for $9.99 / month
+    </a>
+    <button class="paywall-later" onclick="closePaywall()">Maybe Later — Stay on My Results</button>
+    <div class="paywall-guarantee">🔒 Secure checkout · Cancel anytime</div>
+  </div>
+</div>
+
+<!-- html2canvas + jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// PRODUCT LIBRARY
+// ═══════════════════════════════════════════════════════
+const PRODUCTS = {
+  soulwoven: [
+    { name:"Signature RBG Heritage Blanket", brand:"Soul Woven Blankets", price:"$145", category:"Throw Blanket", url:"https://soulwovenblankets.online/products/the-signature-rbg-heritage-blanket", emoji:"🧶", tags:["all"] },
+    { name:"901 Heritage Chunky Throw", brand:"Soul Woven Blankets", price:"$125", category:"Throw Blanket", url:"https://soulwovenblankets.online/products/901-heritage-chunky-throw-navy-gray-pictured", emoji:"🧶", tags:["cozy","minimalist","southern"] },
+    { name:"Neo-Soul Sundae Throw", brand:"Soul Woven Blankets", price:"$135", category:"Throw Blanket", url:"https://soulwovenblankets.online/products/neo-soul-sundae-blanket", emoji:"🧶", tags:["boho","cozy","luxe"] },
+    { name:"Sweetheart Chunky Throw", brand:"Soul Woven Blankets", price:"$120", category:"Throw Blanket", url:"https://soulwovenblankets.online/products/its-all-love-throw-blanket", emoji:"🧶", tags:["all"] },
+    { name:"Reading Nook Throw Pillow", brand:"Soul Woven Blankets", price:"$55", category:"Pillow", url:"https://soulwovenblankets.online/products/little-souls-reading-nook-throw-pillow", emoji:"🛋️", tags:["all"] },
+  ],
+  curated: [
+    { name:"Large Format Art Print", brand:"Big Wall Décor", price:"$89–$249", category:"Wall Art", url:"https://bigwalldecor.com/black-artists/", shop:true, emoji:"🖼️", tags:["all"], why:"Bold statement art by Black artists, fast shipping, dramatic impact on any wall." },
+    { name:"Vibrant Art Print Collection", brand:"Black Art Depot", price:"$25–$85", category:"Wall Art", url:"https://www.blackartdepot.com/collections/all", shop:true, emoji:"🖼️", tags:["all"], why:"20 years curating African American art prints, posters and cultural home décor." },
+    { name:"Pillow & Textile Collection", brand:"AphroChic", price:"$55–$195", category:"Pillow & Textile", url:"https://aphrochic.com/collections/all", shop:true, emoji:"🛋️", tags:["all"], why:"Culture-forward design by Jeanine Hays & Bryan Mason — pillows, rugs, wallpaper rooted in Black American design identity." },
+    { name:"Handmade Ceramic Vessels", brand:"Karen Jai Home", price:"$65–$185", category:"Ceramics", url:"https://karenjaihome.com/collections/pillows", shop:true, emoji:"🏺", tags:["luxe","boho","cozy"], why:"Dallas-based studio creating gorgeous vases and vessels combining ceramic and porcelain." },
+    { name:"Stoneware Ceramics", brand:"Tactile Matter", price:"$45–$150", category:"Ceramics", url:"https://www.tactilematter.com/", shop:true, emoji:"🏺", tags:["minimalist","boho"], why:"LA ceramicist Kenesha Sneed — featured in West Elm and One Kings Lane. Earthy, intentional forms." },
+    { name:"Small-Batch Pottery", brand:"Utility Objects Ceramics", price:"$35–$120", category:"Ceramics", url:"https://www.utilityobjects.com/", shop:true, emoji:"🏺", tags:["minimalist","cozy"], why:"Atlanta-based minimalist ceramic home goods — texture, restraint, and everyday functionality." },
+    { name:"Handwoven Ethiopian Textiles", brand:"Bolé Road Textiles", price:"$45–$285", category:"Textile & Rug", url:"https://boleroadtextiles.com/collections/all", shop:true, emoji:"🧵", tags:["all"], why:"Designed in Brooklyn, handwoven by women artisans in Ethiopia. Pillows, rugs, throws with rich cultural story." },
+    { name:"Afrocentric Pillow Collection", brand:"Reflektion Design", price:"$40–$95", category:"Pillow", url:"https://www.reflektiondesign.com/collections/pillows", shop:true, emoji:"🛋️", tags:["maximalist","boho","southern"], why:"Anitra's Atlanta studio uses authentic African textiles — vibrant, collected-not-decorated pieces." },
+    { name:"Abstract Textile Art", brand:"k-apostrophe", price:"$85–$320", category:"Textile", url:"https://www.wayfair.com/brand/bnd/k-apostrophe-b127536.html", shop:true, emoji:"🧵", tags:["luxe","minimalist","boho"], why:"LA artist K'era Morgan — abstract paintings become throw blankets, pillows and tapestries in natural cotton and wool." },
+    { name:"Luxury Pillow & Rug Collection", brand:"Eva Sonaike", price:"$120–$650", category:"Pillow & Rug", url:"https://www.evasonaike.com/collections/cushions", shop:true, emoji:"✨", tags:["luxe","maximalist"], why:"London-based luxury brand celebrating African design traditions — vibrant cushions, rugs, and poufs." },
+    { name:"Bespoke Custom Rug Collection", brand:"Malene Barnett (Malene B)", price:"$75/sq.ft+", category:"Rug", url:"https://www.malenebarnett.com/carpetcollection", shop:true, emoji:"🟫", tags:["luxe"], why:"Award-winning NYC artist — hand-knotted wool/silk rugs rooted in Caribbean heritage and African diasporic design." },
+    { name:"Washable Designer Rugs", brand:"Malene Barnett x Ruggable", price:"$99–$399", category:"Rug", url:"https://ruggable.com/collections/malene-barnett-rugs", shop:false, emoji:"🟫", tags:["cozy","minimalist","boho"], why:"Malene Barnett's accessible line — washable rugs honoring Black culture and African design." },
+    { name:"African Heritage Rug & Décor", brand:"54kibo", price:"$85–$850", category:"Rug & Décor", url:"https://www.54kibo.com/", shop:true, emoji:"🌍", tags:["maximalist","luxe","boho"], why:"Curated contemporary African design from artisans across the continent — rugs, ceramics, table linens." },
+  ],
+  specialty: [
+    { name:"Luxury Furniture & Décor", brand:"Arhaus", price:"$80–$650", category:"Mixed", url:"https://www.arhaus.com/rugs-pillows-throws/", emoji:"✨", tags:["luxe","cozy","minimalist"], why:"Artisan-crafted furniture and textiles with a commitment to sustainable, handmade quality." },
+    { name:"Classic Home Collection", brand:"Pottery Barn", price:"$40–$399", category:"Mixed", url:"https://www.potterybarn.com/shop/pillows-throws/shop/pillows-and-throws/", emoji:"🏡", tags:["cozy","southern","all"], why:"Timeless, well-crafted pillows, throws and décor that anchor a warm, layered living space." },
+    { name:"Artisan Lighting & Décor", brand:"Rejuvenation", price:"$55–$480", category:"Lighting & Décor", url:"https://www.rejuvenation.com/catalog/categories/decorative-accessoriescatalog/categories/decorative-accessories", emoji:"💡", tags:["minimalist","luxe","boho"], why:"Beautifully crafted lighting and home accessories with a vintage-inspired, artisan soul." },
+    { name:"Artisan & Handcrafted Home", brand:"West Elm", price:"$35–$399", category:"Mixed", url:"https://www.westelm.com/shop/pillows-throws/?cm_type=gnav", emoji:"🌿", tags:["all"], why:"Fair-trade certified handcrafted pillows, rugs, throws — great for layering a cozy, intentional space." },
+  ],
+  retail: [
+    { name:"Throw Pillows & Covers", brand:"Target", price:"$12–$55", category:"Pillow", url:"https://www.target.com/c/throw-pillows-home-decor/-/N-4xsz4?sortBy=Featured&type=A", shop:false, emoji:"🛋️", tags:["budget","all"], why:"Wide selection of on-trend pillow covers. Filter by color to match your palette exactly." },
+    { name:"Area Rugs", brand:"Wayfair", price:"$45–$350", category:"Rug", url:"https://www.wayfair.com/rugs/sb1/black-owneddesigned-area-rugs-c215386-a157865~567987.html", emoji:"🟫", tags:["budget","all"], why:"Wayfair's curated Black-owned/designed rug section — scroll to find the perfect anchor piece." },
+    { name:"Decorative Candles & Accents", brand:"Amazon Home", price:"$12–$45", category:"Décor", url:"https://www.amazon.com/s?k=decorative+candles+home+decor&rh=n%3A1055398", emoji:"🕯️", tags:["budget","all"], why:"Affordable candles, trays, and accent objects to layer on coffee tables and shelves." },
+    { name:"Wall Art Prints", brand:"Etsy", price:"$8–$75", category:"Wall Art", url:"https://www.etsy.com/market/black_owned_wall_art", emoji:"🖼️", tags:["budget","all"], why:"Etsy's Black-owned wall art marketplace — directly support independent artists with affordable prints." },
+    { name:"Decorative Vases & Objects", brand:"HomeGoods", price:"$10–$60", category:"Décor", url:"https://www.homegoods.com/", shop:true, emoji:"🏺", tags:["budget","all"], why:"Best in-store, but browse online for inspiration. Perfect treasure hunt for ceramics, vases and accent objects on a budget." },
+    { name:"Outdoor & Accent Pillows", brand:"IKEA", price:"$8–$45", category:"Pillow", url:"https://www.ikea.com/us/en/cat/cushion-covers-10670/", emoji:"🛋️", tags:["budget","minimalist"], why:"Solid and textured pillow covers for layering. Mix with artisan prints for a pulled-together look." },
+  ]
+};
+
+// ═══════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════
+let state = {
+  photoData: null, photoType: null,
+  name: '', email: '', aesthetic: '', budget: '', budgetLabel: '',
+  sofaColor: '', wallColor: '', notes: '', results: null
+};
+
+// ═══════════════════════════════════════════════════════
+// PHOTO UPLOAD
+// ═══════════════════════════════════════════════════════
+const dropZone = document.getElementById('drop-zone');
+const previewWrap = document.getElementById('preview-wrap');
+const previewImg = document.getElementById('preview-img');
+const btnStep1 = document.getElementById('btn-step1');
+
+function triggerFileInput() {
+  const existing = document.getElementById('photo-input-dynamic');
+  if (existing) existing.remove();
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.id = 'photo-input-dynamic';
+  inp.accept = 'image/*';
+  inp.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;';
+  document.body.appendChild(inp);
+  inp.addEventListener('change', function() {
+    if (this.files && this.files[0]) handleFile(this.files[0]);
+  });
+  setTimeout(() => inp.click(), 50);
+}
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag');
+  if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+
+function handleFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    state.photoData = ev.target.result.split(',')[1];
+    state.photoType = file.type;
+    previewImg.src = ev.target.result;
+    previewWrap.style.display = 'block';
+    btnStep1.disabled = false;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ═══════════════════════════════════════════════════════
+// SELECTIONS
+// ═══════════════════════════════════════════════════════
+function selectAesthetic(el, val) {
+  document.querySelectorAll('.acard').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.aesthetic = val;
+}
+
+function selectBudget(el, tier, label) {
+  document.querySelectorAll('.boption').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.budget = tier;
+  state.budgetLabel = label;
+}
+
+// ═══════════════════════════════════════════════════════
+// STEP NAVIGATION
+// ═══════════════════════════════════════════════════════
+function goStep(num) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + num).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════════════
+// MAIN STYLIST
+// ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// SHOPIFY EMAIL CAPTURE
+// ═══════════════════════════════════════════════════════
+async function submitEmailToShopify(name, email) {
+  if (!email) return;
+  try {
+    // Submit to Shopify customer newsletter list
+    const formData = new FormData();
+    formData.append('form_type', 'customer');
+    formData.append('utf8', '✓');
+    formData.append('contact[email]', email);
+    formData.append('contact[tags]', 'soul-stylist,newsletter');
+    formData.append('contact[first_name]', name);
+    // Try Shopify contact endpoint
+    await fetch('/contact', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    console.log('Email submitted to Shopify:', email);
+  } catch(err) {
+    // Silent fail — don't interrupt the styling flow
+    console.log('Email capture note:', err);
+  }
+}
+
+async function runStylist() {
+  state.name = document.getElementById('f-name').value.trim() || 'You';
+  state.email = document.getElementById('f-email').value.trim();
+  if (state.email) submitEmailToShopify(state.name, state.email);
+  state.sofaColor = document.getElementById('f-sofa').value.trim();
+  state.wallColor = document.getElementById('f-wall').value.trim();
+  state.notes = document.getElementById('f-notes').value.trim();
+
+  if (!state.aesthetic) { alert('Please select an aesthetic vibe first.'); return; }
+  if (!state.budget) { alert('Please select a budget range.'); return; }
+
+  goStep('loading');
+  animateLoadingSteps();
+
+  const seed = Math.random().toString(36).substring(2, 10);
+
+  const productMenu = JSON.stringify({
+    soulwoven: PRODUCTS.soulwoven.map(p => ({ name: p.name, category: p.category, price: p.price })),
+    curated_black_owned: PRODUCTS.curated.map(p => ({ name: p.name, brand: p.brand, category: p.category, price: p.price })),
+    specialty: PRODUCTS.specialty.map(p => ({ name: p.name, brand: p.brand, category: p.category, price: p.price })),
+    retail: PRODUCTS.retail.map(p => ({ name: p.name, brand: p.brand, category: p.category, price: p.price }))
+  });
+
+  const systemPrompt = `You are Soul Stylist, a luxury interior design AI specializing in culturally resonant Black American home design — the Cozy Culture aesthetic. You celebrate Pan-African heritage, Southern soul, and intentional beauty in Black homes.
+
+SESSION ${seed} — every response must be completely unique and tailored to this specific space and person.
+
+You have access to a curated product library. Your job is to analyze the room photo and return a JSON styling plan that references ONLY products from the provided library by their exact name and brand.
+
+PRODUCT LIBRARY:
+${productMenu}
+
+RULES:
+1. ALWAYS feature exactly 1 Soul Woven Blankets product (pick the best match)
+2. Pick 3-4 products from curated_black_owned (Black-owned artisans FIRST priority)
+3. Pick 2 products from specialty
+4. Pick 2-3 products from retail
+5. Match products to the budget tier: budget=${state.budget}
+6. Every recommendation must make sense for this specific room
+
+Return ONLY valid JSON, no markdown, no backticks:
+{
+  "greeting": "Warm 1-sentence personalized greeting using their name",
+  "room_read": "2-3 sentences describing what you actually see in the photo — colors, energy, what's working, what's missing",
+  "style_insight": "1-2 sentences of soul — what this space wants to become",
+  "palette": [{"color": "#hex", "name": "color name"}, ...3-5 colors],
+  "sw_product": {"name": "exact product name from soulwoven list", "why": "why this Soul Woven blanket is perfect for this space"},
+  "curated": [{"name": "exact name", "brand": "exact brand", "why": "specific reason for this space"}, ...3-4 items],
+  "specialty": [{"name": "exact name", "brand": "exact brand", "why": "specific reason"}, ...2 items],
+  "retail": [{"name": "exact name", "brand": "exact brand", "why": "specific reason"}, ...2-3 items],
+  "tips": [
+    {"title": "Tip 1 Title", "body": "Specific styling tip for this exact space"},
+    {"title": "Tip 2 Title", "body": "Specific styling tip"},
+    {"title": "Tip 3 Title", "body": "Specific styling tip"}
+  ],
+  "viz_prompt": "A detailed, photorealistic AI image generation prompt (150-200 words) describing the fully styled room. Include: the specific sofa/seating color and material, exact wall color, the Soul Woven blanket draped naturally, specific products recommended (pillows, rug, art, ceramics) with colors and placement, lighting style, mood, cultural design elements, camera angle. End with: 'Editorial interior photography, warm natural light, photorealistic, 8K resolution, Architectural Digest quality.'"
+}`;
+
+  const userPrompt = `Please style my space. Here are my details:
+Name: ${state.name}
+Aesthetic: ${state.aesthetic}
+Budget: ${state.budgetLabel} (${state.budget})
+Sofa/seating color: ${state.sofaColor || 'not specified'}
+Wall color: ${state.wallColor || 'not specified'}
+Notes: ${state.notes || 'none'}
+
+Analyze the photo and give me a complete styling plan using only products from the library.`;
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': '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,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 2500,
+        temperature: 1,
+        system: systemPrompt,
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'image', source: { type: 'base64', media_type: state.photoType, data: state.photoData } },
+            { type: 'text', text: userPrompt }
+          ]
+        }]
+      })
+    });
+
+    const data = await resp.json();
+    const raw = data.content[0].text.replace(/```json|```/g, '').trim();
+    state.results = JSON.parse(raw);
+    renderResults();
+
+  } catch(err) {
+    console.error('Soul Stylist error:', err);
+    goStep(2);
+    alert('Something went wrong. Please check your API key and try again.');
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// LOADING ANIMATION
+// ═══════════════════════════════════════════════════════
+function animateLoadingSteps() {
+  ['ls1','ls2','ls3','ls4','ls5','ls6'].forEach((id, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('done');
+    }, i * 800 + 400);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDER RESULTS
+// ═══════════════════════════════════════════════════════
+function renderResults() {
+  const R = state.results;
+
+  document.getElementById('result-analysis').textContent = R.greeting || '';
+  document.getElementById('room-read').textContent = R.room_read || '';
+
+  const pdots = document.getElementById('palette-dots');
+  pdots.innerHTML = '';
+  (R.palette || []).forEach(p => {
+    pdots.innerHTML += `<div class="pdot"><div class="pdot-circle" style="background:${p.color}"></div>${p.name}</div>`;
+  });
+
+  const swProd = PRODUCTS.soulwoven.find(p => p.name === R.sw_product?.name) || PRODUCTS.soulwoven[0];
+  document.getElementById('sw-feature-block').innerHTML = `
+    <div class="sw-feature">
+      <div class="sw-feature-img">${swProd.emoji}</div>
+      <div class="sw-feature-body">
+        <span class="sw-feature-badge">Soul Woven Pick</span>
+        <h3>${swProd.name}</h3>
+        <p>${R.sw_product?.why || 'The perfect Soul Woven piece for your space.'}</p>
+        <a href="${swProd.url}" target="_blank">Shop This Blanket →</a>
+      </div>
+    </div>`;
+
+  renderProductGrid('grid-curated', R.curated, 'curated', PRODUCTS.curated);
+  renderProductGrid('grid-specialty', R.specialty, 'specialty', PRODUCTS.specialty);
+  renderProductGrid('grid-retail', R.retail, 'retail', PRODUCTS.retail);
+
+  const tipsEl = document.getElementById('tips-grid');
+  tipsEl.innerHTML = '';
+  (R.tips || []).forEach((t, i) => {
+    tipsEl.innerHTML += `
+      <div class="tip-card">
+        <div class="tip-num">Tip ${i+1} — ${t.title}</div>
+        <p>${t.body}</p>
+      </div>`;
+  });
+
+  buildMoodboard(R);
+
+  if (R.viz_prompt) {
+    document.getElementById('viz-prompt-text').textContent = R.viz_prompt;
+    document.getElementById('viz-section').style.display = 'block';
+  }
+
+  goStep('results');
+  document.getElementById('moodboard-wrap').style.display = 'block';
+}
+
+function renderProductGrid(gridId, items, tier, library) {
+  const el = document.getElementById(gridId);
+  el.innerHTML = '';
+  if (!items || !items.length) return;
+  items.forEach(item => {
+    const libProd = library.find(p => p.name === item.name && p.brand === item.brand) || {};
+    const tierClass = tier === 'curated' ? 'tier-curated' : tier === 'specialty' ? 'tier-recommended' : 'tier-budget';
+    const tierLabel = tier === 'curated' ? '✦ Black-Owned Artisan' : tier === 'specialty' ? 'Specialty Pick' : 'Accessible Find';
+    el.innerHTML += `
+      <div class="pcard">
+        <div class="pcard-img">${libProd.emoji || '🏠'}</div>
+        <div class="pcard-body">
+          <div class="pcard-tier ${tierClass}">${tierLabel}</div>
+          <div class="pcard-name">${item.name}</div>
+          <div class="pcard-brand">${item.brand}</div>
+          <div class="pcard-why">${item.why || ''}</div>
+          <div class="pcard-footer">
+            <div class="pcard-price">${libProd.price || ''}</div>
+            ${libProd.url ? `<a href="${libProd.url}" target="_blank" class="pcard-link">${libProd.shop ? 'Shop Collection →' : 'Shop →'}</a>` : ''}
+          </div>
+        </div>
+      </div>`;
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// PAYWALL
+// ═══════════════════════════════════════════════════════
+function showPaywall() {
+  document.getElementById('paywall-modal').classList.add('open');
+}
+
+function closePaywall() {
+  document.getElementById('paywall-modal').classList.remove('open');
+}
+
+// Close modal if clicking outside the box
+document.getElementById('paywall-modal').addEventListener('click', function(e) {
+  if (e.target === this) closePaywall();
+});
+
+// ═══════════════════════════════════════════════════════
+// RANDOM HELPERS
+// ═══════════════════════════════════════════════════════
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function maybe(prob) { return Math.random() < prob; }
+
+// ── LAMP STYLES ──
+function drawLamp(x, y, accentColor, style) {
+  if (style === 'arc') {
+    // Arc floor lamp
+    return `
+    <path d="M${x} ${y+140} Q${x+60} ${y-20} ${x+110} ${y}" stroke="url(#goldGrad)" stroke-width="3" fill="none"/>
+    <ellipse cx="${x+110}" cy="${y}" rx="36" ry="10" fill="${accentColor}" opacity="0.85"/>
+    <path d="M${x+74} ${y} L${x+80} ${y+50} L${x+140} ${y+50} L${x+146} ${y}" fill="${accentColor}" opacity="0.8"/>
+    <ellipse cx="${x+110}" cy="${y+50}" rx="30" ry="7" fill="${accentColor}88"/>
+    <ellipse cx="${x+110}" cy="${y+42}" rx="18" ry="14" fill="#FFD080" opacity="0.15" filter="url(#mbGlow)"/>
+    <rect x="${x-4}" y="${y+136}" width="8" height="8" rx="2" fill="#C9A84C"/>
+    <ellipse cx="${x}" cy="${y+148}" rx="20" ry="5" fill="#C9A84C" opacity="0.7"/>`;
+  } else if (style === 'tripod') {
+    // Tripod floor lamp
+    return `
+    <line x1="${x}" y1="${y}" x2="${x}" y2="${y+130}" stroke="url(#goldGrad)" stroke-width="3"/>
+    <line x1="${x}" y1="${y+100}" x2="${x-22}" y2="${y+148}" stroke="#C9A84C" stroke-width="2.5"/>
+    <line x1="${x}" y1="${y+100}" x2="${x+22}" y2="${y+148}" stroke="#C9A84C" stroke-width="2.5"/>
+    <ellipse cx="${x-22}" cy="${y+150}" rx="8" ry="3" fill="#C9A84C" opacity="0.6"/>
+    <ellipse cx="${x+22}" cy="${y+150}" rx="8" ry="3" fill="#C9A84C" opacity="0.6"/>
+    <ellipse cx="${x}" cy="${y}" rx="30" ry="8" fill="${accentColor}" opacity="0.9"/>
+    <path d="M${x-30} ${y} L${x-22} ${y+48} L${x+22} ${y+48} L${x+30} ${y}" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+48}" rx="22" ry="6" fill="${accentColor}88"/>
+    <ellipse cx="${x}" cy="${y+38}" rx="14" ry="12" fill="#FFD080" opacity="0.15" filter="url(#mbGlow)"/>`;
+  } else if (style === 'table') {
+    // Table lamp on side table
+    return `
+    <rect x="${x-30}" y="${y+90}" width="60" height="8" rx="3" fill="#C9A84C" opacity="0.8"/>
+    <path d="M${x-18}" y="${y+90}" L"${x-14}" y="${y+66}" L"${x+14}" y="${y+66}" L"${x+18}" y="${y+90}" fill="#8B6914" opacity="0.9"/>
+    <ellipse cx="${x}" cy="${y+66}" rx="28" ry="8" fill="${accentColor}" opacity="0.9"/>
+    <path d="M${x-28} ${y+66} L${x-18} ${y+20} L${x+18} ${y+20} L${x+28} ${y+66}" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+20}" rx="18" ry="5" fill="${accentColor}88"/>
+    <ellipse cx="${x}" cy="${y+28}" rx="12" ry="10" fill="#FFD080" opacity="0.18" filter="url(#mbGlow)"/>
+    <path d="M${x-24}" y="${y+86}" L"${x-12}" y="${y+90}" fill="#7A6010" opacity="0.6"/>
+    <path d="M${x+24}" y="${y+86}" L"${x+12}" y="${y+90}" fill="#7A6010" opacity="0.6"/>`;
+  } else {
+    // Standard floor lamp (original)
+    return `
+    <line x1="${x}" y1="${y}" x2="${x-2}" y2="${y+138}" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="${x-2}" cy="${y+140}" rx="20" ry="5" fill="#C9A84C" opacity="0.8"/>
+    <ellipse cx="${x-2}" cy="${y-22}" rx="40" ry="9" fill="${accentColor}" opacity="0.9"/>
+    <path d="M${x-42} ${y-22} L${x-34} ${y+38} L${x+38} ${y+38} L${x+46} ${y-22}" fill="${accentColor}" opacity="0.88"/>
+    <ellipse cx="${x+2}" cy="${y+38}" rx="36" ry="8" fill="${accentColor}88" opacity="0.85"/>
+    <ellipse cx="${x+2}" cy="${y+28}" rx="22" ry="16" fill="#FFD080" opacity="0.13" filter="url(#mbGlow)"/>`;
+  }
+}
+
+// ── SIDE TABLE STYLES ──
+function drawSideTable(x, y, accentColor, style) {
+  if (style === 'drum') {
+    return `
+    <ellipse cx="${x}" cy="${y}" rx="38" ry="10" fill="#8B6830" opacity="0.9"/>
+    <rect x="${x-38}" y="${y}" width="76" height="30" fill="#7A5820" opacity="0.88"/>
+    <ellipse cx="${x}" cy="${y+30}" rx="38" ry="10" fill="#6A4810" opacity="0.85"/>`;
+  } else if (style === 'hairpin') {
+    return `
+    <rect x="${x-40}" y="${y}" width="80" height="8" rx="3" fill="#C9A84C" opacity="0.9"/>
+    <line x1="${x-28}" y1="${y+8}" x2="${x-32}" y2="${y+42}" stroke="#C9A84C" stroke-width="2.5"/>
+    <line x1="${x-20}" y1="${y+8}" x2="${x-24}" y2="${y+42}" stroke="#C9A84C" stroke-width="2.5"/>
+    <line x1="${x+20}" y1="${y+8}" x2="${x+24}" y2="${y+42}" stroke="#C9A84C" stroke-width="2.5"/>
+    <line x1="${x+28}" y1="${y+8}" x2="${x+32}" y2="${y+42}" stroke="#C9A84C" stroke-width="2.5"/>`;
+  } else if (style === 'pedestal') {
+    return `
+    <ellipse cx="${x}" cy="${y}" rx="40" ry="10" fill="#D4C4A0" opacity="0.9"/>
+    <rect x="${x-12}" y="${y+10}" width="24" height="32" rx="4" fill="#C0B090" opacity="0.88"/>
+    <ellipse cx="${x}" cy="${y+42}" rx="28" ry="7" fill="#B0A080" opacity="0.85"/>`;
+  } else {
+    // Book stack as side table
+    return `
+    <rect x="${x-36}" y="${y}" width="72" height="12" rx="2" fill="#C4622D" opacity="0.9"/>
+    <rect x="${x-34}" y="${y+12}" width="68" height="12" rx="2" fill="#1B3A2D" opacity="0.9"/>
+    <rect x="${x-38}" y="${y+24}" width="76" height="12" rx="2" fill="#C9A84C" opacity="0.85"/>`;
+  }
+}
+
+// ── PLANT STYLES ──
+function drawPlant(x, y, accentColor, style) {
+  if (style === 'fiddle') {
+    // Fiddle leaf fig — tall, dramatic
+    return `
+    <rect x="${x-14}" y="${y+60}" width="28" height="44" rx="5" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+60}" rx="14" ry="5" fill="${accentColor}CC"/>
+    <path d="M${x} ${y+58} Q${x-50} ${y+10} ${x-30} ${y-40} Q${x-10} ${y+10} ${x} ${y+58}Z" fill="#1B5E20" opacity="0.9"/>
+    <path d="M${x} ${y+52} Q${x+45} ${y+5} ${x+28} ${y-38} Q${x+8} ${y+8} ${x} ${y+52}Z" fill="#243D2F" opacity="0.85"/>
+    <path d="M${x} ${y+44} Q${x-42} ${y+8} ${x-26} ${y-28} Q${x-8} ${y+6} ${x} ${y+44}Z" fill="#1B5E20" opacity="0.8"/>
+    <path d="M${x} ${y+36} Q${x+38} ${y+4} ${x+22} ${y-24} Q${x+6} ${y+4} ${x} ${y+36}Z" fill="#2D5E30" opacity="0.75"/>`;
+  } else if (style === 'snake') {
+    // Snake plant — upright spiky leaves
+    return `
+    <rect x="${x-18}" y="${y+66}" width="36" height="38" rx="5" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+66}" rx="18" ry="6" fill="${accentColor}CC"/>
+    <path d="M${x-8} ${y+64} Q${x-16} ${y+20} ${x-10} ${y-30} Q${x-4} ${y+18} ${x-8} ${y+64}Z" fill="#2D6E30" opacity="0.9"/>
+    <path d="M${x} ${y+64} Q${x-6} ${y+10} ${x} ${y-44} Q${x+6} ${y+10} ${x} ${y+64}Z" fill="#1B5E20" opacity="0.88"/>
+    <path d="M${x+8} ${y+64} Q${x+16} ${y+18} ${x+12} ${y-28} Q${x+4} ${y+16} ${x+8} ${y+64}Z" fill="#3D7E40" opacity="0.85"/>
+    <line x1="${x-8}" y1="${y+10}" x2="${x-10}" y2="${y-30}" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+    <line x1="${x}" y1="${y}" x2="${x}" y2="${y-44}" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>`;
+  } else if (style === 'palm') {
+    // Potted palm / tropical
+    return `
+    <rect x="${x-16}" y="${y+58}" width="32" height="46" rx="6" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+58}" rx="16" ry="6" fill="${accentColor}CC"/>
+    <line x1="${x}" y1="${y+56}" x2="${x}" y2="${y+10}" stroke="#8B6830" stroke-width="4"/>
+    <path d="M${x} ${y+12} Q${x-60} ${y-18} ${x-70} ${y-52}" stroke="#1B5E20" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M${x} ${y+12} Q${x+55} ${y-22} ${x+65} ${y-55}" stroke="#243D2F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M${x} ${y+12} Q${x-30} ${y-48} ${x-20} ${y-75}" stroke="#1B5E20" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M${x} ${y+12} Q${x+28} ${y-45} ${x+18} ${y-72}" stroke="#2D5E30" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M${x} ${y+12} Q${x-70} ${y+2} ${x-88} ${y-8}" stroke="#1B5E20" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M${x} ${y+12} Q${x+66} ${y} ${x+84} ${y-10}" stroke="#243D2F" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+  } else if (style === 'pampas') {
+    // Pampas grass in tall vase — static SVG (no nested template literals)
+    const px = x, py = y;
+    const stems = [
+      [px, py+28, px-20, py-10, px-55, py-30],
+      [px, py+28, px-10, py-5,  px-40, py-48],
+      [px, py+28, px,    py-15, px,    py-55],
+      [px, py+28, px+10, py-5,  px+40, py-48],
+      [px, py+28, px+20, py-10, px+55, py-30],
+      [px, py+28, px-30, py+5,  px-55, py-10],
+      [px, py+28, px+30, py+5,  px+55, py-10],
+    ];
+    let pampasHTML = `
+    <rect x="${px-10}" y="${py+30}" width="20" height="70" rx="4" fill="#D4C090" opacity="0.9"/>
+    <ellipse cx="${px}" cy="${py+30}" rx="10" ry="4" fill="#C4B080"/>`;
+    stems.forEach(([x1,y1,cx1,cy1,x2,y2]) => {
+      pampasHTML += `<path d="M${x1} ${y1} Q${cx1} ${cy1} ${x2} ${y2}" stroke="#E8D8A0" stroke-width="1.5" fill="none" opacity="0.8"/>`;
+      pampasHTML += `<ellipse cx="${x2}" cy="${y2}" rx="8" ry="5" fill="#F0E8C0" opacity="0.75"/>`;
+    });
+    return pampasHTML;
+  } else if (style === 'cactus') {
+    // Cactus
+    return `
+    <rect x="${x-16}" y="${y+54}" width="32" height="50" rx="6" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+54}" rx="16" ry="6" fill="${accentColor}CC"/>
+    <rect x="${x-10}" y="${y}" width="20" height="56" rx="10" fill="#2D6E30" opacity="0.9"/>
+    <rect x="${x-20}" y="${y+14}" width="14" height="30" rx="7" fill="#3D7E40" opacity="0.85"/>
+    <path d="M${x-10} ${y+20} Q${x-28} ${y+18} ${x-26} ${y+14}" stroke="#3D7E40" stroke-width="2" fill="none"/>
+    <rect x="${x+6}" y="${y+20}" width="14" height="26" rx="7" fill="#2D6E30" opacity="0.85"/>
+    <path d="M${x+10} ${y+26} Q${x+28} ${y+24} ${x+26} ${y+20}" stroke="#2D6E30" stroke-width="2" fill="none"/>`;
+  } else {
+    // Original corner plant
+    return `
+    <rect x="${x-16}" y="${y}" width="32" height="38" rx="6" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y}" rx="16" ry="5" fill="${accentColor}CC" opacity="0.8"/>
+    <path d="M${x} ${y-2} Q${x-16} ${y-30} ${x-28} ${y-60} Q${x-16} ${y-55} ${x-4} ${y-33} Q${x} ${y-18} ${x} ${y-2}Z" fill="#1B5E20" opacity="0.85"/>
+    <path d="M${x} ${y-2} Q${x+16} ${y-30} ${x+28} ${y-55} Q${x+16} ${y-50} ${x+4} ${y-30} Q${x} ${y-18} ${x} ${y-2}Z" fill="#1B3A2D" opacity="0.8"/>`;
+  }
+}
+
+// ── WALL ART STYLES ──
+function drawWallArt(x, y, accentColor, style) {
+  if (style === 'gallery') {
+    // Gallery wall — 3 frames
+    return `
+    <rect x="${x}" y="${y}" width="130" height="160" rx="3" fill="#1A0A02" stroke="#C9A84C" stroke-width="2"/>
+    <rect x="${x+8}" y="${y+8}" width="114" height="100" fill="${accentColor}" opacity="0.3"/>
+    <line x1="${x}" y1="${y+60}" x2="${x+130}" y2="${y+60}" stroke="#C41E1E" stroke-width="2" opacity="0.6"/>
+    <line x1="${x}" y1="${y+80}" x2="${x+130}" y2="${y+80}" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+    <rect x="${x+144}" y="${y}" width="80" height="72" rx="3" fill="#0A0A0A" stroke="#C9A84C" stroke-width="1.5"/>
+    <circle cx="${x+184}" cy="${y+36}" r="22" fill="none" stroke="${accentColor}" stroke-width="2" opacity="0.7"/>
+    <rect x="${x+144}" y="${y+84}" width="80" height="76" rx="3" fill="#1B3A2D" stroke="#C9A84C" stroke-width="1.5"/>
+    <line x1="${x+152}" y1="${y+100}" x2="${x+216}" y2="${y+100}" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+    <line x1="${x+152}" y1="${y+114}" x2="${x+216}" y2="${y+114}" stroke="#C41E1E" stroke-width="1.5" opacity="0.5"/>
+    <line x1="${x+152}" y1="${y+128}" x2="${x+216}" y2="${y+128}" stroke="#1B5E20" stroke-width="1" opacity="0.4"/>`;
+  } else if (style === 'tapestry') {
+    // Woven tapestry
+    return `
+    <rect x="${x}" y="${y-10}" width="4" height="10" fill="#C9A84C" opacity="0.7"/>
+    <rect x="${x+196}" y="${y-10}" width="4" height="10" fill="#C9A84C" opacity="0.7"/>
+    <rect x="${x-4}" y="${y-14}" width="208" height="6" rx="3" fill="#8B6830" opacity="0.9"/>
+    <rect x="${x}" y="${y}" width="200" height="240" rx="4" fill="#2A1A0A" stroke="#C9A84C" stroke-width="1" opacity="0.8"/>
+    ${[...Array(8)].map((_, i) => `<line x1="${x}" y1="${y+i*30}" x2="${x+200}" y2="${y+i*30}" stroke="#C41E1E" stroke-width="${i%3===0?3:1}" opacity="${i%3===0?0.5:0.2}"/>`).join('')}
+    ${[...Array(6)].map((_, i) => `<line x1="${x+i*34}" y1="${y}" x2="${x+i*34}" y2="${y+240}" stroke="#1B5E20" stroke-width="${i%2===0?2:1}" opacity="0.3"/>`).join('')}
+    <circle cx="${x+100}" cy="${y+120}" r="50" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="${x+100}" cy="${y+120}" r="28" fill="${accentColor}" opacity="0.2"/>
+    ${[...Array(6)].map((_, i) => `<line x1="${x}" y1="${y+240-i*8}" x2="${x+i*4}" y2="${y+240+16}" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>`).join('')}`;
+  } else if (style === 'mirror_arch') {
+    // Arched mirror
+    return `
+    <path d="M${x+60} ${y+200} L${x} ${y+200} L${x} ${y+60} Q${x} ${y} ${x+60} ${y} Q${x+120} ${y} ${x+120} ${y+60} L${x+120} ${y+200} Z" fill="none" stroke="url(#goldGrad)" stroke-width="14"/>
+    <path d="M${x+60} ${y+188} L${x+12} ${y+188} L${x+12} ${y+64} Q${x+12} ${y+12} ${x+60} ${y+12} Q${x+108} ${y+12} ${x+108} ${y+64} L${x+108} ${y+188} Z" fill="${accentColor}" opacity="0.08"/>
+    <path d="M${x+60} ${y+188} L${x+12} ${y+188} L${x+12} ${y+64} Q${x+12} ${y+12} ${x+60} ${y+12} Q${x+108} ${y+12} ${x+108} ${y+64} L${x+108} ${y+188} Z" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+    <ellipse cx="${x+38}" cy="${y+50}" rx="16" ry="10" fill="#C9A84C" opacity="0.06" transform="rotate(-25,${x+38},${y+50})"/>`;
+  } else {
+    // Original Afrocentric panel
+    return `
+    <rect x="${x}" y="${y}" width="200" height="280" rx="4" fill="#1A0A02" stroke="#C9A84C" stroke-width="2.5"/>
+    <rect x="${x+8}" y="${y+8}" width="184" height="264" rx="2" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+    <line x1="${x}" y1="${y+50}" x2="${x+200}" y2="${y+50}" stroke="#C41E1E" stroke-width="3" opacity="0.7"/>
+    <line x1="${x}" y1="${y+75}" x2="${x+200}" y2="${y+75}" stroke="#C9A84C" stroke-width="2" opacity="0.6"/>
+    <line x1="${x}" y1="${y+95}" x2="${x+200}" y2="${y+95}" stroke="#1B5E20" stroke-width="3" opacity="0.7"/>
+    <line x1="${x+60}" y1="${y}" x2="${x+60}" y2="${y+280}" stroke="#C41E1E" stroke-width="2.5" opacity="0.5"/>
+    <line x1="${x+100}" y1="${y}" x2="${x+100}" y2="${y+280}" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/>
+    <line x1="${x+140}" y1="${y}" x2="${x+140}" y2="${y+280}" stroke="#1B5E20" stroke-width="2.5" opacity="0.5"/>
+    <circle cx="${x+100}" cy="${y+180}" r="28" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>`;
+  }
+}
+
+// ── VESSEL / OBJECT STYLES ──
+function drawVessels(x, y, accentColor, style) {
+  if (style === 'tall_ceramic') {
+    return `
+    <ellipse cx="${x}" cy="${y}" rx="14" ry="5" fill="${accentColor}CC"/>
+    <path d="M${x-14} ${y} Q${x-18} ${y+30} ${x-12} ${y+70} L${x+12} ${y+70} Q${x+18} ${y+30} ${x+14} ${y}Z" fill="${accentColor}" opacity="0.9"/>
+    <ellipse cx="${x}" cy="${y+70}" rx="12" ry="4" fill="${accentColor}AA"/>`;
+  } else if (style === 'cluster') {
+    // Cluster of 3 vessels
+    return `
+    <ellipse cx="${x-22}" cy="${y+8}" rx="10" ry="4" fill="${accentColor}CC"/>
+    <path d="M${x-32} ${y+8} Q${x-34} ${y+30} ${x-30} ${y+55} L${x-14} ${y+55} Q${x-10} ${y+30} ${x-12} ${y+8}Z" fill="${accentColor}" opacity="0.88"/>
+    <ellipse cx="${x-22}" cy="${y+55}" rx="10" ry="3.5" fill="${accentColor}AA"/>
+    <ellipse cx="${x+4}" cy="${y}" rx="13" ry="5" fill="#D4C090CC"/>
+    <path d="M${x-9} ${y} Q${x-14} ${y+22} ${x-8} ${y+62} L${x+16} ${y+62} Q${x+22} ${y+22} ${x+17} ${y}Z" fill="#D4C090" opacity="0.9"/>
+    <ellipse cx="${x+4}" cy="${y+62}" rx="13" ry="4" fill="#C4B080AA"/>
+    <ellipse cx="${x+28}" cy="${y+12}" rx="8" ry="3" fill="#1B5E20CC"/>
+    <path d="M${x+20} ${y+12} Q${x+18} ${y+30} ${x+22} ${y+46} L${x+34} ${y+46} Q${x+38} ${y+30} ${x+36} ${y+12}Z" fill="#1B5E20" opacity="0.85"/>
+    <ellipse cx="${x+28}" cy="${y+46}" rx="8" ry="3" fill="#1B5E20AA"/>`;
+  } else if (style === 'bowl') {
+    // Wide decorative bowl
+    return `
+    <path d="M${x-38} ${y} Q${x-40} ${y+24} ${x} ${y+28} Q${x+40} ${y+24} ${x+38} ${y}Z" fill="${accentColor}" opacity="0.9"/>
+    <ellipse cx="${x}" cy="${y}" rx="38" ry="10" fill="${accentColor}CC"/>
+    <ellipse cx="${x}" cy="${y}" rx="30" ry="7" fill="${accentColor}" opacity="0.4"/>
+    <rect x="${x-6}" y="${y+24}" width="12" height="8" rx="2" fill="${accentColor}AA"/>
+    <ellipse cx="${x}" cy="${y+32}" rx="18" ry="5" fill="${accentColor}88"/>`;
+  } else if (style === 'sculpture') {
+    // Abstract sculpture
+    return `
+    <ellipse cx="${x}" cy="${y+70}" rx="18" ry="5" fill="#8B6830" opacity="0.8"/>
+    <rect x="${x-4}" y="${y+10}" width="8" height="60" rx="4" fill="#C9A84C" opacity="0.9"/>
+    <ellipse cx="${x}" cy="${y+10}" rx="18" ry="18" fill="none" stroke="${accentColor}" stroke-width="6"/>
+    <ellipse cx="${x}" cy="${y+10}" rx="10" ry="10" fill="${accentColor}" opacity="0.3"/>
+    <circle cx="${x}" cy="${y+10}" r="4" fill="#C9A84C" opacity="0.9"/>`;
+  } else {
+    // Books stack
+    return `
+    <rect x="${x-28}" y="${y+46}" width="56" height="10" rx="2" fill="${accentColor}" opacity="0.9"/>
+    <rect x="${x-26}" y="${y+36}" width="52" height="10" rx="2" fill="#1B3A2D" opacity="0.9"/>
+    <rect x="${x-30}" y="${y+26}" width="60" height="10" rx="2" fill="#C9A84C" opacity="0.85"/>
+    <rect x="${x-24}" y="${y+16}" width="48" height="10" rx="2" fill="#8B2020" opacity="0.85"/>`;
+  }
+}
+
+// ── COFFEE TABLE ACCESSORIES ──
+function drawTableAccessories(accentColor, style) {
+  if (style === 'candles') {
+    return `
+    <rect x="418" y="572" width="8" height="48" rx="2" fill="#F5EFE6" opacity="0.9"/>
+    <ellipse cx="422" cy="570" rx="4" ry="6" fill="#FFD028" opacity="0.9" filter="url(#mbGlow)"/>
+    <rect x="434" y="582" width="6" height="38" rx="2" fill="#E8D8C0" opacity="0.9"/>
+    <ellipse cx="437" cy="580" rx="3" ry="5" fill="#FFD028" opacity="0.8" filter="url(#mbGlow)"/>
+    <rect x="446" y="590" width="5" height="30" rx="2" fill="#D4C4A0" opacity="0.9"/>
+    <ellipse cx="448" cy="588" rx="2.5" ry="4" fill="#FFD028" opacity="0.75" filter="url(#mbGlow)"/>
+    <ellipse cx="${470}" cy="618" rx="22" ry="8" fill="${accentColor}" opacity="0.9"/>
+    <ellipse cx="${470}" cy="614" rx="18" ry="6" fill="${accentColor}CC" opacity="0.7"/>
+    <rect x="500" y="608" width="60" height="10" rx="2" fill="#1B3A2D"/>
+    <rect x="504" y="598" width="56" height="10" rx="2" fill="#243D2F"/>`;
+  } else if (style === 'books_tray') {
+    return `
+    <rect x="390" y="616" width="80" height="6" rx="2" fill="#8B6830" opacity="0.85"/>
+    <rect x="394" y="596" width="16" height="20" rx="2" fill="#C41E1E" opacity="0.9"/>
+    <rect x="412" y="598" width="14" height="18" rx="2" fill="#1B3A2D" opacity="0.9"/>
+    <rect x="428" y="594" width="18" height="22" rx="2" fill="#C9A84C" opacity="0.85"/>
+    <ellipse cx="510" cy="618" rx="24" ry="8" fill="${accentColor}" opacity="0.9"/>
+    <ellipse cx="510" cy="613" rx="18" ry="6" fill="${accentColor}CC" opacity="0.7"/>
+    <rect x="540" y="600" width="50" height="10" rx="2" fill="#1B3A2D" opacity="0.9"/>
+    <rect x="544" y="590" width="46" height="10" rx="2" fill="#243D2F" opacity="0.9"/>`;
+  } else if (style === 'flowers') {
+    return `
+    <ellipse cx="430" cy="618" rx="16" ry="6" fill="${accentColor}" opacity="0.9"/>
+    <rect x="424" y="574" width="12" height="44" rx="3" fill="#8B6830" opacity="0.8"/>
+    ${[...Array(5)].map((_, i) => {
+      const angle = (i/4) * Math.PI * 2;
+      const fx = 430 + Math.cos(angle) * 16;
+      const fy = 568 + Math.sin(angle) * 8;
+      return `<circle cx="${fx}" cy="${fy}" r="8" fill="#E8A0A0" opacity="0.85"/>`;
+    }).join('')}
+    <circle cx="430" cy="568" r="6" fill="#F0D0D0" opacity="0.9"/>
+    <line x1="430" y1="570" x2="420" y2="555" stroke="#1B5E20" stroke-width="1.5" opacity="0.6"/>
+    <line x1="430" y1="570" x2="440" y2="558" stroke="#1B5E20" stroke-width="1.5" opacity="0.6"/>
+    <rect x="490" y="608" width="60" height="10" rx="2" fill="#1B3A2D"/>
+    <rect x="494" y="598" width="56" height="10" rx="2" fill="#243D2F"/>
+    <ellipse cx="560" cy="618" rx="18" ry="6" fill="${accentColor}88" opacity="0.8"/>`;
+  } else {
+    // Original coffee table objects
+    return `
+    <rect x="430" y="572" width="10" height="50" rx="2" fill="#1A1A18"/>
+    <ellipse cx="435" cy="569" rx="4" ry="6" fill="#FFD028" opacity="0.9" filter="url(#mbGlow)"/>
+    <rect x="448" y="582" width="8" height="40" rx="2" fill="#222220"/>
+    <ellipse cx="452" cy="579" rx="3.5" ry="5" fill="#FFD028" opacity="0.8" filter="url(#mbGlow)"/>
+    <ellipse cx="500" cy="618" rx="22" ry="8" fill="${accentColor}" opacity="0.9"/>
+    <ellipse cx="500" cy="614" rx="18" ry="6" fill="${accentColor}CC" opacity="0.7"/>
+    <rect x="520" y="608" width="60" height="10" rx="2" fill="#1B3A2D"/>
+    <rect x="524" y="599" width="56" height="10" rx="2" fill="#243D2F"/>`;
+  }
+}
+
+// ── WALL MIRROR STYLES ──
+function drawMirror(cx, cy, accentColor, style) {
+  if (style === 'sunburst') {
+    const rays = [...Array(16)].map((_, i) => {
+      const angle = (i / 16) * Math.PI * 2;
+      const r1 = 108, r2 = i % 2 === 0 ? 140 : 128;
+      return `<line x1="${cx + Math.cos(angle)*r1}" y1="${cy + Math.sin(angle)*r1}" x2="${cx + Math.cos(angle)*r2}" y2="${cy + Math.sin(angle)*r2}" stroke="url(#goldGrad)" stroke-width="${i%2===0?4:2.5}" stroke-linecap="round"/>`;
+    }).join('');
+    return `
+    ${rays}
+    <circle cx="${cx}" cy="${cy}" r="108" fill="none" stroke="url(#goldGrad)" stroke-width="6"/>
+    <circle cx="${cx}" cy="${cy}" r="100" fill="${accentColor}" opacity="0.08"/>
+    <circle cx="${cx}" cy="${cy}" r="98" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>`;
+  } else if (style === 'rectangular') {
+    return `
+    <rect x="${cx-70}" y="${cy-120}" width="140" height="240" rx="4" fill="none" stroke="url(#goldGrad)" stroke-width="10"/>
+    <rect x="${cx-62}" y="${cy-112}" width="124" height="224" rx="2" fill="${accentColor}" opacity="0.06"/>
+    <rect x="${cx-62}" y="${cy-112}" width="124" height="224" rx="2" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.25"/>
+    <ellipse cx="${cx-30}" cy="${cy-70}" rx="20" ry="12" fill="#C9A84C" opacity="0.05" transform="rotate(-20,${cx-30},${cy-70})"/>`;
+  } else {
+    // Original circle mirror
+    return `
+    <circle cx="${cx}" cy="${cy}" r="120" fill="none" stroke="url(#goldGrad)" stroke-width="14"/>
+    <circle cx="${cx}" cy="${cy}" r="106" fill="${accentColor}" opacity="0.08"/>
+    <circle cx="${cx}" cy="${cy}" r="104" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+    <ellipse cx="${cx-22}" cy="${cy-32}" rx="28" ry="18" fill="#C9A84C" opacity="0.06" transform="rotate(-20,${cx-22},${cy-32})"/>`;
+  }
+}
+
+// ── FIGURINE / ACCENT OBJECT ──
+function drawFigurine(x, y, accentColor) {
+  const style = pick(['mask', 'figurine', 'basket', 'none']);
+  if (style === 'mask') {
+    return `
+    <ellipse cx="${x}" cy="${y+20}" rx="18" ry="26" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x-6}" cy="${y+16}" rx="5" ry="7" fill="#0A0A08" opacity="0.6"/>
+    <ellipse cx="${x+6}" cy="${y+16}" rx="5" ry="7" fill="#0A0A08" opacity="0.6"/>
+    <path d="M${x-6} ${y+28} Q${x} ${y+34} ${x+6} ${y+28}" stroke="#0A0A08" stroke-width="2" fill="none" opacity="0.6"/>
+    <rect x="${x-2}" y="${y-6}" width="4" height="16" rx="2" fill="#1B5E20" opacity="0.7"/>
+    <rect x="${x-12}" y="${y-2}" width="8" height="3" rx="1" fill="#C9A84C" opacity="0.6"/>
+    <rect x="${x+4}" y="${y-2}" width="8" height="3" rx="1" fill="#C9A84C" opacity="0.6"/>`;
+  } else if (style === 'basket') {
+    return `
+    <path d="M${x-24} ${y+10} Q${x-26} ${y+40} ${x} ${y+44} Q${x+26} ${y+40} ${x+24} ${y+10}Z" fill="#C4A068" opacity="0.88"/>
+    <ellipse cx="${x}" cy="${y+10}" rx="24" ry="8" fill="#D4B078" opacity="0.9"/>
+    ${[...Array(5)].map((_, i) => `<line x1="${x-23+i*2}" y1="${y+10+i*6}" x2="${x+23-i*2}" y2="${y+10+i*6}" stroke="#A08040" stroke-width="1" opacity="0.4"/>`).join('')}
+    <path d="M${x-18} ${y-16} Q${x} ${y-28} ${x+18} ${y-16}" stroke="#C4A068" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  } else if (style === 'figurine') {
+    return `
+    <ellipse cx="${x}" cy="${y+50}" rx="12" ry="4" fill="#8B6830" opacity="0.7"/>
+    <rect x="${x-4}" y="${y+14}" width="8" height="36" rx="3" fill="${accentColor}" opacity="0.85"/>
+    <ellipse cx="${x}" cy="${y+14}" rx="10" ry="14" fill="${accentColor}" opacity="0.88"/>
+    <ellipse cx="${x}" cy="${y+6}" rx="7" ry="8" fill="${accentColor}CC" opacity="0.9"/>`;
+  }
+  return '';
+}
+
+// ═══════════════════════════════════════════════════════
+// BUILD MOOD BOARD SVG
+// ═══════════════════════════════════════════════════════
+function buildMoodboard(R) {
+  const palette = R.palette || [];
+  const wallColor   = palette[0]?.color || '#1B3A2D';
+  const sofaColor   = palette[1]?.color || '#D4C4A8';
+  const accentColor = palette[2]?.color || '#C4622D';
+  const neutralColor= palette[3]?.color || '#F5EFE6';
+  const deepColor   = palette[4]?.color || '#0F1A12';
+
+  // ── Random room accessories for this session — seeded per call ──
+  // Force truly random picks by using crypto random if available
+  const _rand = () => (typeof crypto !== 'undefined' && crypto.getRandomValues)
+    ? crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF
+    : Math.random();
+  const _pick = arr => arr[Math.floor(_rand() * arr.length)];
+  const _maybe = prob => _rand() < prob;
+
+  const lampStyle      = _pick(['standard','arc','tripod']);
+  const plantStyle     = _pick(['fiddle','snake','palm','pampas','cactus','original']);
+  const wallArtStyle   = _pick(['afrocentric','gallery','tapestry','mirror_arch']);
+  const mirrorStyle    = _pick(['circle','sunburst','rectangular']);
+  const sideTableStyle = _pick(['drum','hairpin','pedestal','books']);
+  const vesselStyle    = _pick(['tall_ceramic','cluster','bowl','sculpture','books']);
+  const tableAccStyle  = _pick(['candles','books_tray','flowers','original']);
+  const showFigurine   = _maybe(0.55);
+
+  const sofaInputRaw = (state.sofaColor || '').toLowerCase();
+  let sofaFill = sofaColor;
+  let sofaBackFill = sofaColor;
+  if (sofaInputRaw.includes('cream') || sofaInputRaw.includes('ivory') || sofaInputRaw.includes('linen')) {
+    sofaFill = '#D4C4A8'; sofaBackFill = '#C8B890';
+  } else if (sofaInputRaw.includes('grey') || sofaInputRaw.includes('gray') || sofaInputRaw.includes('charcoal')) {
+    sofaFill = '#686866'; sofaBackFill = '#525250';
+  } else if (sofaInputRaw.includes('white')) {
+    sofaFill = '#F0EDE8'; sofaBackFill = '#E0DDD8';
+  } else if (sofaInputRaw.includes('camel') || sofaInputRaw.includes('tan') || sofaInputRaw.includes('beige')) {
+    sofaFill = '#C8A870'; sofaBackFill = '#B89860';
+  } else if (sofaInputRaw.includes('blue') || sofaInputRaw.includes('navy')) {
+    sofaFill = '#2A4A6A'; sofaBackFill = '#1E3A5A';
+  } else if (sofaInputRaw.includes('green') || sofaInputRaw.includes('sage') || sofaInputRaw.includes('olive')) {
+    sofaFill = '#4A6A4A'; sofaBackFill = '#3A5A3A';
+  } else if (sofaInputRaw.includes('velvet') || sofaInputRaw.includes('emerald')) {
+    sofaFill = '#1A4A2A'; sofaBackFill = '#143A20';
+  }
+
+  const swProd = PRODUCTS.soulwoven.find(p => p.name === R.sw_product?.name) || PRODUCTS.soulwoven[0];
+  const allRecs = [
+    { name: swProd.name, brand: 'Soul Woven Blankets', price: swProd.price, tier: 'SW', url: swProd.url },
+    ...(R.curated || []).slice(0, 3).map(item => {
+      const l = PRODUCTS.curated.find(p => p.name === item.name) || {};
+      return { name: item.name, brand: item.brand, price: l.price || '', tier: 'BLACK-OWNED', url: l.url };
+    }),
+    ...(R.specialty || []).slice(0, 1).map(item => {
+      const l = PRODUCTS.specialty.find(p => p.name === item.name) || {};
+      return { name: item.name, brand: item.brand, price: l.price || '', tier: 'SPECIALTY', url: l.url };
+    }),
+    ...(R.retail || []).slice(0, 1).map(item => {
+      const l = PRODUCTS.retail.find(p => p.name === item.name) || {};
+      return { name: item.name, brand: item.brand, price: l.price || '', tier: item.brand?.toUpperCase() || 'RETAIL', url: l.url };
+    }),
+  ].slice(0, 6);
+
+  function parsePrice(priceStr) {
+    if (!priceStr) return 0;
+    const match = priceStr.match(/\$?([\d,]+(?:\.\d+)?)/);
+    if (!match) return 0;
+    return parseFloat(match[1].replace(/,/g, '')) || 0;
+  }
+  const total = allRecs.reduce((sum, p) => sum + parsePrice(p.price), 0);
+
+  function wrapName(name, maxLen = 20) {
+    if (!name) return ['', ''];
+    if (name.length <= maxLen) return [name, ''];
+    const words = name.split(' ');
+    let line1 = '', line2 = '';
+    for (const w of words) {
+      if ((line1 + ' ' + w).trim().length <= maxLen) line1 = (line1 + ' ' + w).trim();
+      else line2 = (line2 + ' ' + w).trim();
+    }
+    return [line1, line2.substring(0, maxLen)];
+  }
+
+  const PANEL_START = 98;
+  const ROW_H = 108;
+  let productRows = '';
+  allRecs.forEach((prod, i) => {
+    const y = PANEL_START + i * ROW_H;
+    const labelColor = (prod.tier === 'SW' || prod.tier === 'BLACK-OWNED') ? '#C9A84C' : '#777';
+    const barFill = (prod.tier === 'SW' || prod.tier === 'BLACK-OWNED') ? 'url(#goldGrad)' : '#444';
+    const prefix = prod.tier === 'SW' ? '✦ SOUL WOVEN' : prod.tier === 'BLACK-OWNED' ? '✦ BLACK-OWNED' : prod.tier;
+    const [n1, n2] = wrapName(prod.name, 20);
+    const brandShort = (prod.brand || '').substring(0, 22);
+    const priceY = n2 ? y + 94 : y + 84;
+    productRows += `
+    <rect x="976" y="${y}" width="218" height="${ROW_H}" rx="6" fill="#FFFFFF04"/>
+    <rect x="976" y="${y}" width="4" height="${ROW_H}" rx="2" fill="${barFill}"/>
+    <text x="1081" y="${y+19}" text-anchor="middle" font-size="8" fill="${labelColor}" font-family="Georgia,serif" letter-spacing="1.5">${prefix}</text>
+    <text x="1081" y="${y+37}" text-anchor="middle" font-size="12" fill="white" font-family="Georgia,serif">${n1}</text>
+    ${n2 ? `<text x="1081" y="${y+52}" text-anchor="middle" font-size="12" fill="white" font-family="Georgia,serif">${n2}</text>` : ''}
+    <text x="1081" y="${n2 ? y+68 : y+55}" text-anchor="middle" font-size="9" fill="#888" font-family="Georgia,serif">${brandShort}</text>
+    <text x="1081" y="${priceY}" text-anchor="middle" font-size="17" fill="#C9A84C" font-family="Georgia,serif" font-weight="bold">${prod.price || ''}</text>
+    <line x1="978" y1="${y+ROW_H}" x2="1186" y2="${y+ROW_H}" stroke="#C9A84C" stroke-width="0.5" opacity="0.18"/>`;
+  });
+
+  const aestheticShort = (state.aesthetic || 'Cozy Culture').replace('Pan-African Maximalist','Maximalist').replace('Modern Soul Minimalist','Modern Minimalist').replace('Earthy Boho Heritage','Earthy Boho');
+
+  // ── Build randomized room elements ──
+  const lampSVG      = drawLamp(856, 480, accentColor, lampStyle);
+  const plantSVG     = drawPlant(104, 570, accentColor, plantStyle);
+  const wallArtSVG   = drawWallArt(120, 70, accentColor, wallArtStyle);
+  const mirrorSVG    = drawMirror(760, 200, accentColor, mirrorStyle);
+  const sideTableSVG = drawSideTable(868, 592, accentColor, sideTableStyle);
+  const vesselSVG    = drawVessels(860, 548, accentColor, vesselStyle);
+  const tableAccSVG  = drawTableAccessories(accentColor, tableAccStyle);
+  const figurineSVG  = showFigurine ? drawFigurine(_pick([320,550,680]), 580, accentColor) : '';
+
+  const svg = `<svg width="100%" viewBox="0 0 1200 820" xmlns="http://www.w3.org/2000/svg" style="border-radius:12px;overflow:hidden;">
+  <defs>
+    <linearGradient id="mbWallGrad" x1="0" y1="0" x2="0.15" y2="1">
+      <stop offset="0%" stop-color="${wallColor}"/>
+      <stop offset="100%" stop-color="${deepColor}"/>
+    </linearGradient>
+    <linearGradient id="mbFloorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4A068"/>
+      <stop offset="100%" stop-color="#A48048"/>
+    </linearGradient>
+    <linearGradient id="mbSofaBody" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="${sofaFill}"/>
+      <stop offset="60%" stop-color="${sofaBackFill}"/>
+      <stop offset="100%" stop-color="${sofaBackFill}"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0D878"/>
+      <stop offset="45%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#9A7820"/>
+    </linearGradient>
+    <linearGradient id="mbAccentPillow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${accentColor}"/>
+      <stop offset="100%" stop-color="${accentColor}CC"/>
+    </linearGradient>
+    <linearGradient id="mbNeutralPillow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${neutralColor}"/>
+      <stop offset="100%" stop-color="${neutralColor}CC"/>
+    </linearGradient>
+    <linearGradient id="mbRugGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2A1A0A"/>
+      <stop offset="50%" stop-color="#1A0A02"/>
+      <stop offset="100%" stop-color="#2A1A0A"/>
+    </linearGradient>
+    <linearGradient id="mbPanelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0A08"/>
+      <stop offset="100%" stop-color="#161614"/>
+    </linearGradient>
+    <linearGradient id="mbLampShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${accentColor}"/>
+      <stop offset="100%" stop-color="${accentColor}88"/>
+    </linearGradient>
+    <filter id="mbShadow">
+      <feDropShadow dx="0" dy="14" stdDeviation="24" flood-color="#00000050"/>
+    </filter>
+    <filter id="mbGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- WALL -->
+  <rect x="0" y="0" width="962" height="620" fill="url(#mbWallGrad)"/>
+  <rect x="0" y="0" width="962" height="5" fill="#C41E1E"/>
+  <rect x="0" y="5" width="962" height="5" fill="#0A0A08"/>
+  <rect x="0" y="10" width="962" height="5" fill="#1B5E20"/>
+  <rect x="55" y="45" width="580" height="470" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.22" rx="2"/>
+  <rect x="65" y="55" width="560" height="450" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.10" rx="1"/>
+
+  <!-- FLOOR -->
+  <rect x="0" y="620" width="1200" height="200" fill="url(#mbFloorGrad)"/>
+  <line x1="0" y1="635" x2="962" y2="635" stroke="#B09048" stroke-width="1" opacity="0.5"/>
+  <line x1="0" y1="652" x2="962" y2="652" stroke="#B09048" stroke-width="1" opacity="0.4"/>
+  <line x1="0" y1="669" x2="962" y2="669" stroke="#B09048" stroke-width="1" opacity="0.35"/>
+  <line x1="0" y1="686" x2="962" y2="686" stroke="#B09048" stroke-width="1" opacity="0.3"/>
+
+  <!-- RUG -->
+  <rect x="160" y="624" width="600" height="88" rx="3" fill="url(#mbRugGrad)" opacity="0.92"/>
+  <rect x="160" y="628" width="600" height="5" fill="#C9A84C" opacity="0.35"/>
+  <rect x="160" y="703" width="600" height="5" fill="#C9A84C" opacity="0.35"/>
+  <rect x="168" y="638" width="584" height="55" fill="none" stroke="#C9A84C" stroke-width="0.7" opacity="0.18" rx="1"/>
+  <line x1="280" y1="633" x2="280" y2="709" stroke="#C41E1E" stroke-width="0.6" opacity="0.2"/>
+  <line x1="400" y1="633" x2="400" y2="709" stroke="#C9A84C" stroke-width="0.6" opacity="0.2"/>
+  <line x1="520" y1="633" x2="520" y2="709" stroke="#C41E1E" stroke-width="0.6" opacity="0.2"/>
+  <line x1="640" y1="633" x2="640" y2="709" stroke="#C9A84C" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- WALL MIRROR (randomized) -->
+  ${mirrorSVG}
+
+  <!-- WALL ART (randomized) -->
+  ${wallArtSVG}
+
+  <!-- LAMP (randomized) -->
+  ${lampSVG}
+
+  <!-- SIDE TABLE (randomized) -->
+  ${sideTableSVG}
+
+  <!-- VESSELS on side table (randomized) -->
+  ${vesselSVG}
+
+  <!-- SOFA SHADOW -->
+  <ellipse cx="480" cy="632" rx="290" ry="18" fill="#000" opacity="0.25"/>
+
+  <!-- SOFA BODY -->
+  <rect x="200" y="530" width="560" height="110" rx="16" fill="url(#mbSofaBody)" filter="url(#mbShadow)"/>
+  <rect x="208" y="534" width="174" height="100" rx="10" fill="${sofaFill}" opacity="0.9"/>
+  <rect x="392" y="534" width="174" height="100" rx="10" fill="${sofaBackFill}" opacity="0.9"/>
+  <rect x="576" y="534" width="174" height="100" rx="10" fill="${sofaFill}" opacity="0.9"/>
+  <line x1="386" y1="540" x2="386" y2="628" stroke="#80704A" stroke-width="1.5" opacity="0.4"/>
+  <line x1="574" y1="540" x2="574" y2="628" stroke="#80704A" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- SOFA BACK -->
+  <rect x="200" y="440" width="560" height="100" rx="16" fill="url(#mbSofaBody)"/>
+  <rect x="208" y="448" width="174" height="86" rx="10" fill="${sofaFill}" opacity="0.85"/>
+  <rect x="392" y="448" width="174" height="86" rx="10" fill="${sofaBackFill}" opacity="0.85"/>
+  <rect x="576" y="448" width="174" height="86" rx="10" fill="${sofaFill}" opacity="0.85"/>
+
+  <!-- SOFA ARMS -->
+  <rect x="190" y="450" width="30" height="190" rx="12" fill="${sofaBackFill}"/>
+  <rect x="740" y="450" width="30" height="190" rx="12" fill="${sofaBackFill}"/>
+  <rect x="185" y="446" width="40" height="14" rx="6" fill="${sofaFill}"/>
+  <rect x="735" y="446" width="40" height="14" rx="6" fill="${sofaFill}"/>
+
+  <!-- SOFA LEGS -->
+  <rect x="216" y="630" width="12" height="18" rx="3" fill="#C9A84C"/>
+  <rect x="348" y="630" width="12" height="18" rx="3" fill="#C9A84C"/>
+  <rect x="600" y="630" width="12" height="18" rx="3" fill="#C9A84C"/>
+  <rect x="732" y="630" width="12" height="18" rx="3" fill="#C9A84C"/>
+
+  <!-- SOUL WOVEN RBG THROW on arm -->
+  <path d="M195 490 Q210 510 220 560 Q225 590 215 620 Q205 640 195 648 Q185 645 188 620 Q194 590 192 560 Q188 520 195 490Z" fill="#C41E1E" opacity="0.92"/>
+  <path d="M200 492 Q212 512 222 562 Q227 590 217 620 Q210 638 202 644 Q198 640 200 618 Q204 590 202 560 Q198 524 200 492Z" fill="#0A0A08" opacity="0.85"/>
+  <path d="M205 494 Q216 514 225 563 Q230 590 220 620 Q214 637 207 642 Q204 638 206 618 Q210 590 208 562 Q204 526 205 494Z" fill="#1B5E20" opacity="0.9"/>
+  <rect x="212" y="625" width="22" height="14" rx="2" fill="#F5EFE6" opacity="0.8"/>
+  <text x="223" y="635" text-anchor="middle" font-size="5" fill="#1B3A2D" font-family="Georgia,serif">SW</text>
+
+  <!-- PILLOWS -->
+  <rect x="225" y="455" width="95" height="85" rx="10" fill="url(#mbAccentPillow)" filter="url(#mbShadow)"/>
+  <rect x="230" y="460" width="85" height="75" rx="8" fill="none" stroke="white" stroke-width="0.8" opacity="0.2"/>
+  <line x1="235" y1="478" x2="310" y2="478" stroke="white" stroke-width="0.6" opacity="0.18"/>
+  <line x1="235" y1="493" x2="310" y2="493" stroke="white" stroke-width="0.6" opacity="0.18"/>
+  <rect x="420" y="448" width="120" height="90" rx="12" fill="url(#mbNeutralPillow)" filter="url(#mbShadow)"/>
+  <rect x="426" y="454" width="108" height="78" rx="10" fill="none" stroke="#C4A880" stroke-width="1" opacity="0.4"/>
+  <path d="M440 468 Q448 460 456 468 Q464 476 472 468 Q480 460 488 468 Q496 476 504 468 Q512 460 520 468" stroke="#A89060" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+  <path d="M440 483 Q448 475 456 483 Q464 491 472 483 Q480 475 488 483 Q496 491 504 483 Q512 475 520 483" stroke="#A89060" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+  <rect x="610" y="460" width="80" height="70" rx="8" fill="#C9A84C" opacity="0.85" filter="url(#mbShadow)"/>
+  <rect x="616" y="466" width="68" height="58" rx="6" fill="none" stroke="#F0D878" stroke-width="1" opacity="0.5"/>
+  <circle cx="650" cy="495" r="16" fill="none" stroke="#F0D878" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- COFFEE TABLE -->
+  <rect x="250" y="622" width="460" height="16" rx="4" fill="#F0EDE8" stroke="#C9A84C" stroke-width="1.2"/>
+  <path d="M268 638 L258 666 L274 666" stroke="url(#goldGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M692 638 L702 666 L686 666" stroke="url(#goldGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M370 638 L363 662 L376 662" stroke="url(#goldGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M590 638 L597 662 L583 662" stroke="url(#goldGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="472" cy="622" rx="118" ry="14" fill="#111110" stroke="#C9A84C" stroke-width="1.8"/>
+
+  <!-- COFFEE TABLE ACCESSORIES (randomized) -->
+  ${tableAccSVG}
+
+  <!-- FIGURINE / ACCENT OBJECT (randomized) -->
+  ${figurineSVG}
+
+  <!-- CORNER PLANT (randomized) -->
+  ${plantSVG}
+
+  <!-- PRODUCT PANEL -->
+  <rect x="962" y="0" width="238" height="820" fill="url(#mbPanelGrad)"/>
+  <rect x="962" y="0" width="2.5" height="820" fill="url(#goldGrad)" opacity="0.85"/>
+  <rect x="972" y="18" width="218" height="784" rx="4" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.28"/>
+  <text x="1081" y="38" text-anchor="middle" font-size="9" fill="#C9A84C" font-family="Georgia,serif" letter-spacing="4">SOUL STYLIST</text>
+  <text x="1081" y="58" text-anchor="middle" font-size="18" fill="white" font-family="Georgia,serif">Shop the Look</text>
+  <text x="1081" y="74" text-anchor="middle" font-size="8" fill="#666660" font-family="Georgia,serif" letter-spacing="2">CURATED FOR ${(state.name || 'YOU').toUpperCase()}</text>
+  <line x1="978" y1="88" x2="1172" y2="88" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+  ${productRows}
+  <rect x="976" y="754" width="218" height="50" rx="6" fill="url(#goldGrad)"/>
+  <text x="1085" y="773" text-anchor="middle" font-size="8" fill="#0A0A08" font-family="Georgia,serif" letter-spacing="2">ESTIMATED TOTAL</text>
+  <text x="1085" y="794" text-anchor="middle" font-size="19" fill="#0A0A08" font-family="Georgia,serif" font-weight="bold">$${total.toFixed(0)}</text>
+
+  <!-- BRANDING BAR -->
+  <rect x="0" y="756" width="962" height="64" fill="#080808" opacity="0.97"/>
+  <line x1="0" y1="756" x2="962" y2="756" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+  <rect x="0" y="756" width="962" height="3" fill="#C41E1E" opacity="0.7"/>
+  <rect x="0" y="759" width="962" height="3" fill="#0A0A08" opacity="0.9"/>
+  <rect x="0" y="762" width="962" height="3" fill="#1B5E20" opacity="0.7"/>
+  <text x="46" y="782" font-size="9" fill="#C9A84C" font-family="Georgia,serif" letter-spacing="3">SOUL STYLIST  ✦  AI-POWERED INTERIOR DESIGN</text>
+  <text x="46" y="808" font-size="19" fill="white" font-family="Georgia,serif">${aestheticShort} — Styled for ${state.name || 'You'}</text>
+  <text x="700" y="776" font-size="9" fill="#C9A84C" font-family="Georgia,serif" letter-spacing="2">FEATURING</text>
+  <text x="700" y="796" font-size="13" fill="white" font-family="Georgia,serif">Soul Woven Blankets</text>
+  <text x="700" y="814" font-size="9" fill="#666" font-family="Georgia,serif">soulwovenblankets.online</text>
+</svg>`;
+
+  const mbContainer = document.getElementById('moodboard');
+  mbContainer.innerHTML = svg;
+  mbContainer.style.background = 'transparent';
+  mbContainer.style.border = 'none';
+  mbContainer.style.borderRadius = '0';
+}
+
+// ═══════════════════════════════════════════════════════
+// DOWNLOAD / PRINT MOOD BOARD
+// ═══════════════════════════════════════════════════════
+async function downloadMoodboard(format) {
+  const el = document.getElementById('moodboard');
+  const btnPng = document.getElementById('btn-png');
+  const btnPdf = document.getElementById('btn-pdf');
+  const activBtn = format === 'pdf' ? btnPdf : btnPng;
+
+  btnPng.disabled = true; btnPdf.disabled = true;
+  activBtn.textContent = '⏳ Generating…';
+
+  const filename = `SoulStylist-${(state.name||'MoodBoard').replace(/\s+/g,'-')}-${(state.aesthetic||'CozyCulture').replace(/\s+/g,'-')}`;
+
+  try {
+    const svgEl = el.querySelector('svg');
+    if (format === 'png' && svgEl) {
+      const svgData = new XMLSerializer().serializeToString(svgEl);
+      const svgBlob = new Blob([svgData], {type:'image/svg+xml;charset=utf-8'});
+      const svgUrl = URL.createObjectURL(svgBlob);
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1200; canvas.height = 820;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#111A13';
+        ctx.fillRect(0, 0, 1200, 820);
+        ctx.drawImage(img, 0, 0, 1200, 820);
+        URL.revokeObjectURL(svgUrl);
+        const link = document.createElement('a');
+        link.download = filename + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        btnPng.disabled = false; btnPdf.disabled = false;
+        btnPng.textContent = '⬇ Download PNG'; btnPdf.textContent = '⬇ Download PDF';
+      };
+      img.onerror = () => {
+        const link = document.createElement('a');
+        link.download = filename + '.svg';
+        link.href = URL.createObjectURL(svgBlob);
+        link.click();
+        btnPng.disabled = false; btnPdf.disabled = false;
+        btnPng.textContent = '⬇ Download PNG'; btnPdf.textContent = '⬇ Download PDF';
+      };
+      img.src = svgUrl;
+      return;
+    } else if (format === 'pdf' && svgEl) {
+      const svgData = new XMLSerializer().serializeToString(svgEl);
+      const svgBlob = new Blob([svgData], {type:'image/svg+xml;charset=utf-8'});
+      const svgUrl = URL.createObjectURL(svgBlob);
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 2400; canvas.height = 1640;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#111A13';
+        ctx.fillRect(0, 0, 2400, 1640);
+        ctx.drawImage(img, 0, 0, 2400, 1640);
+        URL.revokeObjectURL(svgUrl);
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+        const pageW = pdf.internal.pageSize.getWidth();
+        const pageH = pdf.internal.pageSize.getHeight();
+        pdf.setFillColor(17, 26, 19);
+        pdf.rect(0, 0, pageW, pageH, 'F');
+        const imgRatio = canvas.width / canvas.height;
+        const pageRatio = pageW / pageH;
+        let drawW, drawH, offsetX = 0, offsetY = 0;
+        if (imgRatio > pageRatio) { drawW = pageW; drawH = pageW / imgRatio; offsetY = (pageH - drawH) / 2; }
+        else { drawH = pageH; drawW = pageH * imgRatio; offsetX = (pageW - drawW) / 2; }
+        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', offsetX, offsetY, drawW, drawH);
+        pdf.setFontSize(7); pdf.setTextColor(100, 130, 100);
+        pdf.text('Styled by Soul Stylist · soulwovenblankets.online', pageW / 2, pageH - 2, { align: 'center' });
+        pdf.save(filename + '.pdf');
+        btnPng.disabled = false; btnPdf.disabled = false;
+        btnPng.textContent = '⬇ Download PNG'; btnPdf.textContent = '⬇ Download PDF';
+      };
+      img.onerror = () => {
+        alert('PDF export failed. Try Download PNG instead.');
+        btnPng.disabled = false; btnPdf.disabled = false;
+        btnPng.textContent = '⬇ Download PNG'; btnPdf.textContent = '⬇ Download PDF';
+      };
+      img.src = svgUrl;
+      return;
+    }
+  } catch(err) {
+    console.error('Export error:', err);
+    alert('Export failed. Try the Print option instead.');
+    btnPng.disabled = false; btnPdf.disabled = false;
+    btnPng.textContent = '⬇ Download PNG'; btnPdf.textContent = '⬇ Download PDF';
+  }
+}
+
+function printMoodboard() { window.print(); }
+
+// ═══════════════════════════════════════════════════════
+// VIZ TAB SWITCHER
+// ═══════════════════════════════════════════════════════
+function switchVizTab(btn, panelId) {
+  document.querySelectorAll('.viz-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.viz-panel').forEach(p => p.style.display = 'none');
+  btn.classList.add('active');
+  document.getElementById('panel-' + panelId).style.display = 'block';
+}
+
+// ═══════════════════════════════════════════════════════
+// COPY VISUALIZATION PROMPT
+// ═══════════════════════════════════════════════════════
+async function copyVizPrompt() {
+  const text = document.getElementById('viz-prompt-text').textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch(e) {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  const success = document.getElementById('copy-success');
+  const btn = document.getElementById('copy-viz-btn');
+  success.classList.add('show');
+  btn.textContent = '✓ Copied!';
+  setTimeout(() => { success.classList.remove('show'); btn.textContent = '📋 Copy Prompt'; }, 2500);
+}
+
+
+// ═══════════════════════════════════════════════════════
+// NUCLEAR INPUT TEXT FIX — bypasses all Shopify CSS
+// ═══════════════════════════════════════════════════════
+function forceInputStyles() {
+  const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+  inputs.forEach(el => {
+    el.style.setProperty('color', '#F0E8DC', 'important');
+    el.style.setProperty('-webkit-text-fill-color', '#F0E8DC', 'important');
+    el.style.setProperty('background', 'rgba(255,255,255,0.06)', 'important');
+    el.style.setProperty('border', '1px solid rgba(255,255,255,0.15)', 'important');
+    el.style.setProperty('caret-color', '#C9A84C', 'important');
+    el.addEventListener('input', function() {
+      this.style.setProperty('color', '#F0E8DC', 'important');
+      this.style.setProperty('-webkit-text-fill-color', '#F0E8DC', 'important');
+    });
+    el.addEventListener('focus', function() {
+      this.style.setProperty('color', '#F0E8DC', 'important');
+      this.style.setProperty('-webkit-text-fill-color', '#F0E8DC', 'important');
+      this.style.setProperty('border-color', 'rgba(201,168,76,0.5)', 'important');
+    });
+  });
+}
+// Run immediately and again after any dynamic content loads
+document.addEventListener('DOMContentLoaded', forceInputStyles);
+setTimeout(forceInputStyles, 500);
+setTimeout(forceInputStyles, 1500);
+
+// ═══════════════════════════════════════════════════════
+// LOGO LOADER
+// ═══════════════════════════════════════════════════════
+function loadLogos() {
+  const LOGO = 'https://cdn.shopify.com/s/files/1/0762/5657/5712/files/Soul_Woven_logo-color.png';
+  const placements = [
+    { id: 'logo-nav',  cls: 'logo-img',     w: '52px',  h: '52px'  },
+    { id: 'logo-hero', cls: 'hero-logo-img', w: '160px', h: '160px' },
+  ];
+  placements.forEach(p => {
+    const el = document.getElementById(p.id);
+    if (!el) return;
+    const img = new Image();
+    img.onload = () => {
+      el.innerHTML = '';
+      img.style.cssText = `width:${p.w};height:${p.h};object-fit:contain;display:block;`;
+      if (p.cls) img.className = p.cls;
+      el.appendChild(img);
+      el.style.background = 'transparent';
+      el.style.border = 'none';
+      el.style.borderRadius = '0';
+    };
+    img.src = LOGO + '?t=' + Date.now();
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadLogos);
+} else {
+  loadLogos();
+}
+</script>
+</body>
+</html>
